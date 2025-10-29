@@ -5,17 +5,22 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] private int maxHealth = 100;
-    [SerializeField] private int maxEnergy = 50;
-    [SerializeField] private int dashEnergyCost = 10;
-    [SerializeField] private int PunchEnergyCost = 2;
+    [SerializeField] private float maxHealth = 100;
+    [SerializeField] private float maxEnergy = 50;
+    [SerializeField] private float dashEnergyCost = 10;
+    [SerializeField] private float PunchEnergyCost = 2;
+    [SerializeField] private float energyRegenRate = 5f;
+    [SerializeField] private int maxLives = 4;
 
-    private int currentHealth;
-    private int currentEnergy;
+    private int currentLives;   
+    private float currentHealth;
+    private float currentEnergy;
 
     [Header("UI Elements")]
     [SerializeField] private Slider hpSlider;
     [SerializeField] private Slider energySlider;
+    [SerializeField] private Image heartLivesImage;
+    [SerializeField] private Sprite[] heartSprites;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Movement Speeds")]
     [SerializeField] private float walkSpeed = 5.0f; 
@@ -30,6 +35,10 @@ public class PlayerController : MonoBehaviour
     [Header("Dashing")]
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashDuration = 0.5f;
+    [Header("Colliders")]
+    [SerializeField] private Collider2D standingCollider; 
+    [SerializeField] private Collider2D deathCollider;
+
     private Animator animator;
     private bool isGrounded;
     private Rigidbody2D rb;
@@ -43,8 +52,13 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        standingCollider.enabled = true;
+        deathCollider.enabled = false;
+
+        currentLives = maxLives;
         currentHealth = maxHealth;
         currentEnergy = maxEnergy;
+        UpdateHealthUI();
 
         hpSlider.maxValue = maxHealth;
         hpSlider.value = currentHealth;
@@ -60,6 +74,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead) return;
         if (isDashing || isAttacking)
         {
             return;
@@ -70,15 +85,38 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             return;
         }
-        if (isDead) return;
+        
         moveInput = Input.GetAxis("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift);
         HandleMovement();
         HandleJump();
         HandleDashInput();
         HandlePunchAttackInput();
+        if (currentEnergy < maxEnergy)
+        {
+            RegenEnergy(energyRegenRate * Time.deltaTime);
+        }
+        RegenEnergy(energyRegenRate * Time.deltaTime);
+//testdamage
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            // Gọi hàm TakeDamage với một lượng sát thương bất kỳ (ví dụ: 10)
+            TakeDamage(10f);
+            Debug.Log("Đã nhận 10 sát thương! Máu còn: " + currentHealth);
+        }
+
         UpdateAnimation(); 
     }
+    private void UpdateHealthUI()
+    {
+            int spriteIndex = maxLives - currentLives;
+
+            if (spriteIndex >= 0 && spriteIndex < heartSprites.Length)
+            {
+                heartLivesImage.sprite = heartSprites[spriteIndex];
+            }
+    }
+
     private void HandleMovement()
     {
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
@@ -141,13 +179,13 @@ public class PlayerController : MonoBehaviour
 
         isAttacking = false;
     }
-    public void UseEnergy(int amount)
+    public void UseEnergy(float amount)
     {
         currentEnergy -= amount;
         if (currentEnergy < 0) currentEnergy = 0;
         energySlider.value = currentEnergy; // Cập nhật UI
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
@@ -158,21 +196,31 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            HandleDie();
+            currentLives--;
+            if(currentLives <= 0)
+            {
+                UpdateHealthUI();
+                HandleDie();
+            }
+            else
+            {
+                currentHealth = maxHealth;      // Hồi lại 100 HP
+                hpSlider.value = currentHealth; // Cập nhật lại thanh máu
+                UpdateHealthUI();
+            }     
         }
     }
     private void HandleDie()
     {
         isDead = true;
-        animator.SetTrigger("isDead"); // Kích hoạt Trigger chết
-
-        // Tắt vật lý để nhân vật không bị trôi đi
-        rb.linearVelocity = Vector2.zero;
-        rb.gravityScale = 0f;
+        animator.SetTrigger("isDeath"); // Kích hoạt Trigger chết
+        standingCollider.enabled = false;
+        deathCollider.enabled = true;
+        // Tắt duy chuyển ngang
+        rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
 
         // Tắt collider để kẻ địch có thể đi xuyên qua
         GetComponent<Collider2D>().enabled = false;
-
         // Tắt script này đi để người chơi không thể điều khiển được nữa
         this.enabled = false;
     }
@@ -181,6 +229,12 @@ public class PlayerController : MonoBehaviour
         bool isHoldingSitKey = Input.GetKey(KeyCode.S);
         animator.SetBool("isSitting", isHoldingSitKey);
         isSitting = isHoldingSitKey;
+    }
+    private void RegenEnergy(float amount)
+    {
+        currentEnergy += amount;
+        if (currentEnergy > maxEnergy) currentEnergy = maxEnergy;
+        energySlider.value = currentEnergy; // Cập nhật UI
     }
     private void UpdateAnimation()
     {
