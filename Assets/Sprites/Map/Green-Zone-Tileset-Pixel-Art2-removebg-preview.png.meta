@@ -1,0 +1,2312 @@
+fileFormatVersion: 2
+guid: d4d7c440b4d6aea439e91648c70f9178
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7793887084699192582
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_0
+  - first:
+      213: -908735687618348987
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_1
+  - first:
+      213: 6119040835657969532
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_2
+  - first:
+      213: 5682605527050640172
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_3
+  - first:
+      213: 953504174450280012
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_4
+  - first:
+      213: -8674889419413368963
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_5
+  - first:
+      213: 8658941211091754391
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_6
+  - first:
+      213: -721156451004953184
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_7
+  - first:
+      213: 3139886962174946113
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_8
+  - first:
+      213: -8139028031878005849
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_9
+  - first:
+      213: 1050274831216128250
+    second: Green-Zone-Tileset-Pixel-Art2-removebg-preview_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d000f7203792c60800000000000000
+      internalID: 7793887084699192582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548b9c0f4b58363f0800000000000000
+      internalID: -908735687618348987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7fa08f48333be450800000000000000
+      internalID: 6119040835657969532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2b568e7e9bacde40800000000000000
+      internalID: 5682605527050640172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4606f9aef68b3d00800000000000000
+      internalID: 953504174450280012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f421ad80a9c9780800000000000000
+      internalID: -8674889419413368963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 7
+        width: 46
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d5d1a872dba2870800000000000000
+      internalID: 8658941211091754391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 7
+        width: 46
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad4e565700fdf5f0800000000000000
+      internalID: -721156451004953184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 7
+        width: 47
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14b61576e8e139b20800000000000000
+      internalID: 3139886962174946113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 8
+        width: 13
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7abf6fe902d5c0f80800000000000000
+      internalID: -8139028031878005849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0bb27f463539e00800000000000000
+      internalID: 1050274831216128250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025e42242d2246a47b2d4eb8f4e827e0
+      internalID: 2085832086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2951b5565785a9148889aed043e91748
+      internalID: -1151036053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9405b633c1cc40545b7172099699942c
+      internalID: 671677897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e976c0d24ff79a0489d391ea683f29be
+      internalID: 1319342892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb2170abd32119d49bd8696f4210f71a
+      internalID: -248856950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0b2a6a5c6a3024d97afebe1cf19ca9
+      internalID: -325232255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db0b4d8851a69349bec3b8f4424a6dc
+      internalID: 997599897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab055b1360ba49e42b1f20d73570c323
+      internalID: 435260173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2744fc1c5d620ca4882f1affca9ad0c5
+      internalID: -1079320077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9972b018e82f33c4db80fa30bef5c3e9
+      internalID: -270615775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 355
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cf048488743094c8129d1e8ae8b059
+      internalID: -1841692757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de149aa2ce2c3734090bfd5d35ee81bf
+      internalID: 537803694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca11cf75c4a1679469868a681321717a
+      internalID: 414543967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe4d8b49b2d66d4fa897de2abf04a6b
+      internalID: -369516045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 270043dde2869d3498eed02678fd28d9
+      internalID: -294836098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80451b0786e25ab41b3517cd6cfcbed2
+      internalID: -590574405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488c63a9442989445993782ab395eedc
+      internalID: 1060308954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b696d6cd41cce4bba1ea9456713fca
+      internalID: 1247099268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a03abe2f0e5a1e46a39f5647104998b
+      internalID: 426046706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23658c34d63c90648bc3e814fcc1a1e5
+      internalID: 954280424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9231388ef422565449440aaab86a7d44
+      internalID: 716021573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c6aee56ab75024dbb6a31df07518c3
+      internalID: 380673315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 305
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61ab7197ea85b64ca84b1c7de53a088
+      internalID: 414247829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d636661e6389148bc00de2d07541cf
+      internalID: -686899731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00953b58168789b45b731bd92e85db4b
+      internalID: -199582182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0eba8533f192042b66e34a8edec074
+      internalID: 706759206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa4e09b1e013dff478fa208e134bded2
+      internalID: -1768442290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1f1b51f9128c542acd7cb47413c60b
+      internalID: -1528412713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2265c55e6069554fb7c68f9af9c2b1d
+      internalID: -614295171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca807a240eb34934fad64136d8fcf1af
+      internalID: -1419963094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376dee84a1069d94cb5cd4d26c19fdd6
+      internalID: 107009431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bf9e58964f043a4fa501a0e220b6ba2
+      internalID: -1427786200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ce1fcd31105ca49bbf9823410936a8
+      internalID: -731331003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3620edf72a0c2458cea37f14557975
+      internalID: -10196407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 256
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e986fe16eaa8ba49a7109596fceeec3
+      internalID: 1116147074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66476a2149bcb4446bad62d974225bb9
+      internalID: 1325322419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7804a5ae564804daaaa860a36d94f9
+      internalID: -1920108752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee4fb9520dd9fd2438046bdc6753abbf
+      internalID: -1728705313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e3802ca404ab13459faff92c5f0a6ec
+      internalID: -1559509877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08436d5144393ef4287b7ac26797efb5
+      internalID: 294044808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_51
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279531dcb01b9d2409a73d165ef756a4
+      internalID: -804009892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_52
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed72202a90ea094fa6affa2baa46186
+      internalID: 516753773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_53
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85e9b2e83394a244adde12d85a3d721
+      internalID: 1478110587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_54
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857e5c1e679e81947bedea679b258e4d
+      internalID: 1750271028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_55
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4515a8560999342a3bcbc6063de736
+      internalID: -2083344540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_56
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44285dd9d1074546806b9d282ea8bfc
+      internalID: -508487799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_57
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 206
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47534183ebf24d648983e845e06422e0
+      internalID: 177557388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_58
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f6575892ffd1240b3edf20734f5f37
+      internalID: -1910081075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_59
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd6365bc4d33674b9dfa254a8c2b1e7
+      internalID: -5132007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_60
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940cdc11b78b87a40990cc5318de68d1
+      internalID: -2010914897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_61
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603d4f1dd5c47e34ba3dd737e51f5860
+      internalID: -1726396814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_62
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29539f5f057cf474ebc60438f942cea2
+      internalID: -996174269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_63
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf6cb82f5db3ab468061efcb1ec281e
+      internalID: -233591794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_64
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c0490128dc2bd43abc21856c054b70
+      internalID: 32514681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_65
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b02a5d4d6f749444b49b45719adc882
+      internalID: 1850789686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_66
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be3ad07bb56e8bf4fbbbec71fbf0b79a
+      internalID: 803501152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_67
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90976f5500944004392fbce3a2432aa1
+      internalID: -661255216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_68
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed260b70626a9e47897e4652082e609
+      internalID: -1628532288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_69
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 156
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 117176e943ddf6b4ea9738505fe28236
+      internalID: -1643992246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_70
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a02df335745354d8ab5944ef0b3b20
+      internalID: -1761827778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_71
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc77bfe236119248a86694271b1632a
+      internalID: 743687844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_72
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257e505d6b57a5c42be626d54d47e69b
+      internalID: -26667246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_73
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b3796192980a7429b2cda3731b6072
+      internalID: -721045387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_74
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 372232ef05dba1d42a766eb359948cce
+      internalID: 741323312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_75
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b767445871a7543b0a104a69114983
+      internalID: -1429546550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_76
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ab44f01a72ac94419404235dfd6d83d
+      internalID: -270022921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_77
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a453dc06eb2a25147999b6faba8f68fb
+      internalID: 156299060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_78
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 106
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b095fe83973faff429817e38484b5bd7
+      internalID: -1335681288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_79
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 106
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfc52489832aa1a45ab3dcc761c23bb2
+      internalID: -93546128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_80
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0284464b9cfae324aba7dc4d1077427b
+      internalID: 1735379234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_81
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 107
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf11410f8902be48931826baed08dff
+      internalID: -948988193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_82
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f541a754324d8e347b20846b4b8e4e93
+      internalID: 1196245103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_83
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37494f59336e30b40a9bb9e21db823a4
+      internalID: -304608523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_84
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6514f11e885095347a1b16f6c733b146
+      internalID: -2087901735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_85
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d68b09fe86d8446ae9f5421b852791
+      internalID: 1231154651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_86
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca61939182eee294a9b533380f19a8af
+      internalID: -1629214858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_87
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24cfd35dfd0a28449e55bda92cc7182
+      internalID: -1611822449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_88
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 57
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1528e310065fd3343b8810dcb2de4785
+      internalID: 806060489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_89
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09b9eadc3a10b814aa0a06c1abc06040
+      internalID: 405625955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_90
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 7
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b483af3260ba8a2419b76139c3eedb78
+      internalID: -1749907608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_91
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 7
+        width: 46
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54310d3cdd1f594da406220894f9ee1
+      internalID: -450618098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_92
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 7
+        width: 46
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f4a9903127d674e9b056953077aba4
+      internalID: 180904694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green-Zone-Tileset-Pixel-Art2-removebg-preview_93
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 7
+        width: 46
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340553902f2d4ab479c45b34e7e8632c
+      internalID: 2055339056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b0d12d31efb17ab449a4c75fdf15d8de
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_0: 7793887084699192582
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_1: -908735687618348987
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_10: 1050274831216128250
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_11: 2085832086
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_12: -1151036053
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_13: 671677897
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_14: 1319342892
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_15: -248856950
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_16: -325232255
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_17: 997599897
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_18: 435260173
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_19: -1079320077
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_2: 6119040835657969532
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_20: -270615775
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_21: -1841692757
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_22: 537803694
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_23: 414543967
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_24: -369516045
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_25: -294836098
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_26: -590574405
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_27: 1060308954
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_28: 1247099268
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_29: 426046706
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_3: 5682605527050640172
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_30: 954280424
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_31: 716021573
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_32: 380673315
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_33: 414247829
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_34: -686899731
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_35: -199582182
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_36: 706759206
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_37: -1768442290
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_38: -1528412713
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_39: -614295171
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_4: 953504174450280012
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_40: -1419963094
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_41: 107009431
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_42: -1427786200
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_43: -731331003
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_44: -10196407
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_45: 1116147074
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_46: 1325322419
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_47: -1920108752
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_48: -1728705313
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_49: -1559509877
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_5: -8674889419413368963
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_50: 294044808
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_51: -804009892
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_52: 516753773
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_53: 1478110587
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_54: 1750271028
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_55: -2083344540
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_56: -508487799
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_57: 177557388
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_58: -1910081075
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_59: -5132007
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_6: 8658941211091754391
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_60: -2010914897
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_61: -1726396814
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_62: -996174269
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_63: -233591794
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_64: 32514681
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_65: 1850789686
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_66: 803501152
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_67: -661255216
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_68: -1628532288
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_69: -1643992246
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_7: -721156451004953184
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_70: -1761827778
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_71: 743687844
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_72: -26667246
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_73: -721045387
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_74: 741323312
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_75: -1429546550
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_76: -270022921
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_77: 156299060
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_78: -1335681288
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_79: -93546128
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_8: 3139886962174946113
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_80: 1735379234
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_81: -948988193
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_82: 1196245103
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_83: -304608523
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_84: -2087901735
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_85: 1231154651
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_86: -1629214858
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_87: -1611822449
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_88: 806060489
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_89: 405625955
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_9: -8139028031878005849
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_90: -1749907608
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_91: -450618098
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_92: 180904694
+      Green-Zone-Tileset-Pixel-Art2-removebg-preview_93: 2055339056
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
