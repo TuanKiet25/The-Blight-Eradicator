@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: f9a3eb4d2e17a41489072609efe41f69
+guid: 3ac6b04ae3995ca48b844d6c38287875
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6474817916930609645
-    second: Punk_idle_0
-  - first:
-      213: 3800310597756625337
-    second: Punk_idle_1
-  - first:
-      213: 5867332370219042989
-    second: Punk_idle_2
-  - first:
-      213: 1194793324445235756
-    second: Punk_idle_3
+      213: -5623352784528687395
+    second: unnamed-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -60,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,111 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Punk_idle_0
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 0
-        width: 19
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de1dbf3279c2bd950800000000000000
-      internalID: 6474817916930609645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_idle_1
-      rect:
-        serializedVersion: 2
-        x: 52
-        y: 0
-        width: 19
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9b1af6f8a5a6db430800000000000000
-      internalID: 3800310597756625337
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_idle_2
-      rect:
-        serializedVersion: 2
-        x: 99
-        y: 0
-        width: 20
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da88e0a44b3fc6150800000000000000
-      internalID: 5867332370219042989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Punk_idle_3
-      rect:
-        serializedVersion: 2
-        x: 147
-        y: 0
-        width: 20
-        height: 35
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c2af093c232c49010800000000000000
-      internalID: 1194793324445235756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_0
+      name: unnamed-removebg-preview_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 186
-        height: 45
+        width: 403
+        height: 516
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5879f28695cb0374ab7b3596da7b3bfd
-      internalID: -239136457
+      spriteID: ddeb67faf66d5f1b0800000000000000
+      internalID: -5623352784528687395
       vertices: []
       indices: 
       edges: []
@@ -235,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3a1b24eb760d42c478bd2543003a69d2
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -245,11 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Punk_idle_0: 6474817916930609645
-      Punk_idle_1: 3800310597756625337
-      Punk_idle_2: 5867332370219042989
-      Punk_idle_3: 1194793324445235756
-      idle_0: -239136457
+      unnamed-removebg-preview_0: -5623352784528687395
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
