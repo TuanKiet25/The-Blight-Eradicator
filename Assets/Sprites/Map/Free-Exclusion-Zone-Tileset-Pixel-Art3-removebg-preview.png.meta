@@ -1,0 +1,1648 @@
+fileFormatVersion: 2
+guid: 887b311325cf5cc44bcf047171b1f804
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5684678833485545330
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_0
+  - first:
+      213: -7327492074109064330
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_1
+  - first:
+      213: 6520272403456870054
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_2
+  - first:
+      213: 8965840288213291447
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_3
+  - first:
+      213: -1859755346094758882
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_4
+  - first:
+      213: -1830740585609395931
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_5
+  - first:
+      213: 6183097755636233288
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_6
+  - first:
+      213: -3052550462368186854
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_7
+  - first:
+      213: -6871688711587662050
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_8
+  - first:
+      213: 698830104140981422
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_9
+  - first:
+      213: -3651232012600429585
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_10
+  - first:
+      213: 8173470175581565491
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_11
+  - first:
+      213: 5229989456435388463
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_12
+  - first:
+      213: -7911070561778275910
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_13
+  - first:
+      213: 3910721396815165311
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_14
+  - first:
+      213: 376306220656976211
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_15
+  - first:
+      213: -1225954520337022613
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_16
+  - first:
+      213: 7839654510166855164
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_17
+  - first:
+      213: 5113920720463904844
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_18
+  - first:
+      213: 3956976959664836265
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_19
+  - first:
+      213: 737340395590396388
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_20
+  - first:
+      213: 4787785127343784550
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_21
+  - first:
+      213: -3735981595338788744
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_22
+  - first:
+      213: 760353780848784809
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_23
+  - first:
+      213: 3866072121460110448
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_24
+  - first:
+      213: 4294961382725942410
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_25
+  - first:
+      213: -5793027591316277233
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_26
+  - first:
+      213: -8023262486786797480
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_27
+  - first:
+      213: 8411569886521760834
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_28
+  - first:
+      213: 1275969385168090746
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_29
+  - first:
+      213: -3651858551666693698
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_30
+  - first:
+      213: 1390636679279762479
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_31
+  - first:
+      213: 4690151024800010433
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_32
+  - first:
+      213: -2520021340492518455
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_33
+  - first:
+      213: 905308197014350928
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_34
+  - first:
+      213: -5887506414733780195
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_35
+  - first:
+      213: 7534381912502147270
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_36
+  - first:
+      213: 1157667887123204135
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_37
+  - first:
+      213: 792406386797024751
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_38
+  - first:
+      213: 8416068837934316047
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_39
+  - first:
+      213: 1479666976690805750
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_40
+  - first:
+      213: 5358041640831414709
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_41
+  - first:
+      213: -142046267368629032
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_42
+  - first:
+      213: -3176162668895483789
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_43
+  - first:
+      213: 6904801721873478643
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_44
+  - first:
+      213: 2591191818980072530
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_45
+  - first:
+      213: -5063964838676602778
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_46
+  - first:
+      213: -6103868139697922490
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_47
+  - first:
+      213: 2551790558293434413
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_48
+  - first:
+      213: -6812987972120427046
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_49
+  - first:
+      213: 2584796006370120705
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_50
+  - first:
+      213: -2334272272015777928
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_51
+  - first:
+      213: -700905468630117797
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_52
+  - first:
+      213: -1641254525726296424
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_53
+  - first:
+      213: -2511231389799456715
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_54
+  - first:
+      213: -933649763662638960
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_55
+  - first:
+      213: -8640299299825495834
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_56
+  - first:
+      213: 1709077789816903283
+    second: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 343
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8089eb38b6fb11b0800000000000000
+      internalID: -5684678833485545330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 343
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b2d3408c48f4a90800000000000000
+      internalID: -7327492074109064330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 343
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a644de7439ac7a50800000000000000
+      internalID: 6520272403456870054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 342
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1d6d33d301d6c70800000000000000
+      internalID: 8965840288213291447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 342
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1463eabd52d036e0800000000000000
+      internalID: -1859755346094758882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 342
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5218cd61327e796e0800000000000000
+      internalID: -1830740585609395931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 342
+        width: 46
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844763836a6cec550800000000000000
+      internalID: 6183097755636233288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 343
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1ef69f078923a5d0800000000000000
+      internalID: -3052550462368186854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 289
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1771ca468bd2a0a0800000000000000
+      internalID: -6871688711587662050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 288
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea42ca3f64eb2b900800000000000000
+      internalID: 698830104140981422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 288
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3ba6064d7345dc0800000000000000
+      internalID: -3651232012600429585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 288
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 332f9cdd1dffd6170800000000000000
+      internalID: 8173470175581565491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 287
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20aed173b7a49840800000000000000
+      internalID: 5229989456435388463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 288
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab9e72c1d3b363290800000000000000
+      internalID: -7911070561778275910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 287
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77ffa8f36ca54630800000000000000
+      internalID: 3910721396815165311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 287
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35167019388e83500800000000000000
+      internalID: 376306220656976211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 287
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b610780fbd88cfee0800000000000000
+      internalID: -1225954520337022613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfdc840ad3c0ccc60800000000000000
+      internalID: 7839654510166855164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40c2c0fccb48f640800000000000000
+      internalID: 5113920720463904844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae4a3174910ae630800000000000000
+      internalID: 3956976959664836265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e926b5ee2f8b3a00800000000000000
+      internalID: 737340395590396388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6628930e431a17240800000000000000
+      internalID: 4787785127343784550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8703f6a7880272cc0800000000000000
+      internalID: -3735981595338788744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5fd133cb15d8a00800000000000000
+      internalID: 760353780848784809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 233
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074bba37c1c07a530800000000000000
+      internalID: 3866072121460110448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 235
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c76653f94ca9b30800000000000000
+      internalID: 4294961382725942410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 178
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f087e8539180b9fa0800000000000000
+      internalID: -5793027591316277233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 177
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8501b5ff645a7a090800000000000000
+      internalID: -8023262486786797480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 176
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c9081de36ebb470800000000000000
+      internalID: 8411569886521760834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 176
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a76b73b356725b110800000000000000
+      internalID: 1275969385168090746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 177
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb92fe1eefdf15dc0800000000000000
+      internalID: -3651858551666693698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 176
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2c591021b88c4310800000000000000
+      internalID: 1390636679279762479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 177
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c09320f183c61140800000000000000
+      internalID: 4690151024800010433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 176
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cb2a8541f5170dd0800000000000000
+      internalID: -2520021340492518455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 178
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c2a47320d409c00800000000000000
+      internalID: 905308197014350928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b95f0fb106b4ea0800000000000000
+      internalID: -5887506414733780195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c891d83e608f8860800000000000000
+      internalID: 7534381912502147270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7280bdb4fccd01010800000000000000
+      internalID: 1157667887123204135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_38
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe599c219613ffa00800000000000000
+      internalID: 792406386797024751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_39
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0a3f429402ebc470800000000000000
+      internalID: 8416068837934316047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_40
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb18839645d88410800000000000000
+      internalID: 1479666976690805750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_41
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 121
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1f185fb769b5a40800000000000000
+      internalID: 5358041640831414709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_42
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 121
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc92d32ca9570ef0800000000000000
+      internalID: -142046267368629032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_43
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 122
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 378c0a371e00ce3d0800000000000000
+      internalID: -3176162668895483789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_44
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 17
+        width: 46
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f336c43598c2df50800000000000000
+      internalID: 6904801721873478643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_45
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 17
+        width: 46
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25c943b0b33c5f320800000000000000
+      internalID: 2591191818980072530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 16
+        width: 46
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 660ec9b2fce29b9b0800000000000000
+      internalID: -5063964838676602778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_47
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 67
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64e1b714444ba4ba0800000000000000
+      internalID: -6103868139697922490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_48
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 16
+        width: 46
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20a6482ef7c96320800000000000000
+      internalID: 2551790558293434413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_49
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 14
+        width: 46
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad5c0ce39876371a0800000000000000
+      internalID: -6812987972120427046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_50
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 16
+        width: 46
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1041a80e54a0fd320800000000000000
+      internalID: 2584796006370120705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_51
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 88
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f94717cbffa9fd0800000000000000
+      internalID: -2334272272015777928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_52
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 76
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b525c299032e546f0800000000000000
+      internalID: -700905468630117797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_53
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 76
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896f41064b71939e0800000000000000
+      internalID: -1641254525726296424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_54
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 16
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53061362b50562dd0800000000000000
+      internalID: -2511231389799456715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_55
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 18
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 090d2449c720b03f0800000000000000
+      internalID: -933649763662638960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_56
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 47
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e058d8a09d771880800000000000000
+      internalID: -8640299299825495834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_57
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 16
+        width: 19
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 376db8bd13dd7b710800000000000000
+      internalID: 1709077789816903283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_58
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 343
+        width: 46
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2107dd0820fc1f74f9cfcd85d6ac4284
+      internalID: 596806534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ba77167f91d034e4e8270d17bb2d4b2b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_0: -5684678833485545330
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_1: -7327492074109064330
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_10: -3651232012600429585
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_11: 8173470175581565491
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_12: 5229989456435388463
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_13: -7911070561778275910
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_14: 3910721396815165311
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_15: 376306220656976211
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_16: -1225954520337022613
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_17: 7839654510166855164
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_18: 5113920720463904844
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_19: 3956976959664836265
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_2: 6520272403456870054
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_20: 737340395590396388
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_21: 4787785127343784550
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_22: -3735981595338788744
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_23: 760353780848784809
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_24: 3866072121460110448
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_25: 4294961382725942410
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_26: -5793027591316277233
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_27: -8023262486786797480
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_28: 8411569886521760834
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_29: 1275969385168090746
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_3: 8965840288213291447
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_30: -3651858551666693698
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_31: 1390636679279762479
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_32: 4690151024800010433
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_33: -2520021340492518455
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_34: 905308197014350928
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_35: -5887506414733780195
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_36: 7534381912502147270
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_37: 1157667887123204135
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_38: 792406386797024751
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_39: 8416068837934316047
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_4: -1859755346094758882
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_40: 1479666976690805750
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_41: 5358041640831414709
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_42: -142046267368629032
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_43: -3176162668895483789
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_44: 6904801721873478643
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_45: 2591191818980072530
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_46: -5063964838676602778
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_47: -6103868139697922490
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_48: 2551790558293434413
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_49: -6812987972120427046
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_5: -1830740585609395931
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_50: 2584796006370120705
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_51: -2334272272015777928
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_52: -700905468630117797
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_53: -1641254525726296424
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_54: -2511231389799456715
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_55: -933649763662638960
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_56: -8640299299825495834
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_57: 1709077789816903283
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_58: 596806534
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_6: 6183097755636233288
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_7: -3052550462368186854
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_8: -6871688711587662050
+      Free-Exclusion-Zone-Tileset-Pixel-Art3-removebg-preview_9: 698830104140981422
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
