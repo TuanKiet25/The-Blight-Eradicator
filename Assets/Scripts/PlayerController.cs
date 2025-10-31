@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
             if (spriteIndex >= 0 && spriteIndex < heartSprites.Length)
             {
-                heartLivesImage.sprite = heartSprites[spriteIndex];
+                heartLivesImage.sprite = heartSprites[spriteIndex]; 
             }
     }
 
