@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxEnergy = 50;
     [SerializeField] private float dashEnergyCost = 10;
     [SerializeField] private float PunchEnergyCost = 2;
+    [SerializeField] private float DoubleJumpEnergyCost = 5;
     [SerializeField] private float energyRegenRate = 5f;
     [SerializeField] private int maxLives = 4;
 
@@ -26,7 +27,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed = 5.0f; 
     [SerializeField] private float runSpeed = 8.0f;
     [Header("Jumping")]
-    [SerializeField] private float jumpForce = 10.0f;
+    [SerializeField] private float jumpForce = 20.0f;
+    [SerializeField] private int maxJumps = 1; 
     [Header("Ground Check")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
@@ -46,8 +48,8 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private bool isDashing;
     private bool isAttacking = false;
-    private bool isSitting = false;
     private bool isDead = false;
+    private int jumpCount;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -65,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
         energySlider.maxValue = maxEnergy;
         energySlider.value = currentEnergy;
+        jumpCount = maxJumps;
     }
     void Start()
     {
@@ -77,12 +80,6 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
         if (isDashing || isAttacking)
         {
-            return;
-        }
-        HandleSit();
-        if (isSitting)
-        {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
             return;
         }
         
@@ -128,9 +125,30 @@ public class PlayerController : MonoBehaviour
     private void HandleJump()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (isGrounded)
         {
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+            jumpCount = maxJumps;
+        }
+        if (Input.GetButtonDown("Jump") )
+        {
+            if (jumpCount > 0)
+            {
+                jumpCount--; // Trừ 1 lượt nhảy
+
+                // Mẹo hay: Reset vận tốc Y để cú nhảy 2 mạnh như cú nhảy 1
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
+
+                // Thêm lực nhảy (giữ nguyên)
+                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
+                // 5. Nếu đây là cú nhảy trên không (Double Jump)
+                if (!isGrounded)
+                {
+                    // Kích hoạt animation Double Jump
+                    animator.SetTrigger("isDoubleJumping");
+                    UseEnergy(DoubleJumpEnergyCost);
+                }
+            }
         }
     }
     private void HandleDashInput()
@@ -197,13 +215,14 @@ public class PlayerController : MonoBehaviour
         if (currentHealth <= 0)
         {
             currentLives--;
-            if(currentLives <= 0)
+            if (currentLives <= 0)
             {
                 UpdateHealthUI();
                 HandleDie();
             }
             else
             {
+                animator.SetTrigger("isLostHeart");
                 currentHealth = maxHealth;      // Hồi lại 100 HP
                 hpSlider.value = currentHealth; // Cập nhật lại thanh máu
                 UpdateHealthUI();
@@ -223,12 +242,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         // Tắt script này đi để người chơi không thể điều khiển được nữa
         this.enabled = false;
-    }
-    private void HandleSit()
-    {
-        bool isHoldingSitKey = Input.GetKey(KeyCode.S);
-        animator.SetBool("isSitting", isHoldingSitKey);
-        isSitting = isHoldingSitKey;
     }
     private void RegenEnergy(float amount)
     {
