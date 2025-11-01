@@ -3,23 +3,30 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    // ... (Các biến Stats, Health, Animation Timings giữ nguyên) ...
     [Header("Stats")]
     public float moveSpeed = 2f;
     public float attackRange = 1.5f;
-    public float attackCooldown = 1.5f; // đánh chậm lại
+    public float attackCooldown = 1.5f;
     public float detectRange = 6f;
     public float attackDamage = 10f;
 
-    // Các biến Animation Timings vẫn được giữ để tham chiếu thời gian
+    // ⚔️ HEALTH & SÁT THƯƠNG TỪ PLAYER
+    [Header("Health")]
+    [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
+    [SerializeField] private float playerPunchDamage = 2f;
+    [Tooltip("Số lần Player phải đấm để Enemy chết. (Cần là 2)")]
+    [SerializeField] private int requiredPunchesToKill = 2; // Yêu cầu 2 đấm
+    private float maxHealth;
+    private float currentHealth;
+    // ---------------------------------------------
+
     [Header("Animation Timings")]
-    [Tooltip("Tổng thời gian (giây) của hoạt ảnh 'enemy_attacl'.")]
-    public float attackAnimationDuration = 1.0f; // Dùng để chờ hoạt ảnh kết thúc
-    [Tooltip("Thời gian (giây) từ đầu hoạt ảnh đến frame gây sát thương (0:30 là 0.3s).")]
-    public float damageFrameTime = 0.3f; // Chỉ là biến tham chiếu trong Inspector
+    public float attackAnimationDuration = 1.0f;
+    public float damageFrameTime = 0.3f;
 
     [Header("References")]
     public LayerMask playerLayer;
-    // public Collider2D attackHitbox; // <--- KHÔNG DÙNG NỮA
 
     private Transform player;
     private Animator animator;
@@ -34,29 +41,33 @@ public class EnemyController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        // Sử dụng GameObject.FindGameObjectWithTag an toàn hơn cho lần tìm kiếm đầu tiên
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
-        // Ngăn tấn công ngay lập tức khi spawn
         lastAttackTime = Time.time;
+
+        // 🔪 KHỞI TẠO MÁU: Máu = 2 * 2 = 4f
+        maxHealth = requiredPunchesToKill * playerPunchDamage;
+        currentHealth = maxHealth;
     }
 
     void Update()
     {
         if (isDead || player == null) return;
+        if (isAttacking)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
         float distance = Vector2.Distance(transform.position, player.position);
 
         if (distance <= attackRange)
         {
-            // Dừng di chuyển ngay lập tức khi trong tầm đánh
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
-
-            // Đảm bảo kẻ địch quay mặt về phía người chơi trước khi tấn công
             FlipTowardsPlayer();
 
-            if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
+            if (Time.time - lastAttackTime >= attackCooldown)
             {
                 StartCoroutine(Attack());
             }
@@ -73,17 +84,11 @@ public class EnemyController : MonoBehaviour
 
     private void MoveTowardsPlayer()
     {
-        // Ngăn di chuyển khi đang tấn công
-        if (isAttacking) return;
-
         animator.SetBool("isWalking", true);
 
         Vector2 direction = (player.position - transform.position).normalized;
-
-        // Chỉ di chuyển theo trục X
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
 
-        // Lật hướng nếu cần
         if (direction.x > 0 && !isFacingRight) Flip();
         else if (direction.x < 0 && isFacingRight) Flip();
     }
@@ -95,76 +100,82 @@ public class EnemyController : MonoBehaviour
         else if (directionX < 0 && isFacingRight) Flip();
     }
 
-    // ----------------------------------------------------------------------
-    // PHẦN LOGIC TẤN CÔNG
-    // ----------------------------------------------------------------------
-
     private IEnumerator Attack()
     {
         isAttacking = true;
         animator.SetTrigger("isAttacking");
         rb.linearVelocity = Vector2.zero;
 
-        // Coroutine chỉ chờ hoạt ảnh kết thúc (damageFrameTime không còn được dùng ở đây)
-        // Logic gây sát thương được gọi bởi Animation Event.
         yield return new WaitForSeconds(attackAnimationDuration);
 
-        // Kết thúc Tấn công và Bắt đầu tính Cooldown
         isAttacking = false;
         lastAttackTime = Time.time;
     }
 
-    // HÀM GÂY SÁT THƯƠNG ĐƯỢC GỌI BỞI ANIMATION EVENT (Tại 0:30)
     public void ApplyDamageToPlayer()
     {
-        if (player == null) return;
+        if (player == null || isDead || !isAttacking) return;
 
-        // 1. Kiểm tra cự ly (Player có trong tầm đánh không?)
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance > attackRange)
-        {
-            return;
-        }
+        if (distance > attackRange) return;
 
-        // 2. Kiểm tra hướng mặt (Player có ở phía trước Enemy không?)
         float directionToPlayer = player.position.x - transform.position.x;
         bool isPlayerInFront = (directionToPlayer > 0 && isFacingRight) ||
                                (directionToPlayer < 0 && !isFacingRight);
 
         if (isPlayerInFront)
         {
-            // 3. Gây sát thương
             var playerController = player.GetComponent<PlayerController>();
             if (playerController != null)
             {
                 playerController.TakeDamage(attackDamage);
-                Debug.Log("Sát thương thành công tại frame hoạt ảnh!");
             }
         }
     }
-
-    // ----------------------------------------------------------------------
-    // CÁC HÀM CÒN LẠI
-    // ----------------------------------------------------------------------
 
     public void TakeDamage(float dmg)
     {
         if (isDead) return;
 
-        animator.SetTrigger("isHurt");
-        // Nếu có máu riêng cho enemy thì trừ ở đây
-        // currentHealth -= dmg; 
-        // if (currentHealth <= 0) Die();
+        isAttacking = false;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        currentHealth -= dmg;
+        Debug.Log(gameObject.name + " bị nhận " + dmg + " sát thương. Máu còn: " + currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            animator.SetTrigger("isHurt");
+        }
     }
 
     public void Die()
     {
+        if (isDead) return;
         isDead = true;
+
+        // 1. Kích hoạt hoạt ảnh
         animator.SetTrigger("isDeath");
-        rb.linearVelocity = Vector2.zero;
-        // Xóa logic tắt Hitbox khỏi đây
+
+        // 2. Dừng vật lý ngay lập tức!
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            // 🔑 QUAN TRỌNG: Tắt Simulation để vô hiệu hóa trọng lực!
+            rb.simulated = false;
+        }
+
+        // 3. Tắt Collider và script
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+
+        // 4. 🚀 ĐÃ SỬA: Tăng thời gian chờ hủy để khớp với hoạt ảnh (ví dụ 2 giây)
+        // Nếu hoạt ảnh chết của bạn dài hơn 2 giây, bạn cần tăng giá trị này.
+        Destroy(gameObject, 2f);
     }
 
     private void Flip()
