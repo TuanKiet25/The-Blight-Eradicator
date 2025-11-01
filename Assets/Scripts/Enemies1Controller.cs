@@ -10,15 +10,16 @@ public class EnemyController : MonoBehaviour
     public float detectRange = 6f;
     public float attackDamage = 10f;
 
-    // CHÚ Ý: ĐIỀU CHỈNH GIÁ TRỊ NÀY TRONG INSPECTOR
+    // Các biến Animation Timings vẫn được giữ để tham chiếu thời gian
     [Header("Animation Timings")]
     [Tooltip("Tổng thời gian (giây) của hoạt ảnh 'enemy_attacl'.")]
-    public float attackAnimationDuration = 1.0f; // <-- ĐIỀN CHÍNH XÁC THỜI GIAN HOẠT ẢNH
+    public float attackAnimationDuration = 1.0f; // Dùng để chờ hoạt ảnh kết thúc
     [Tooltip("Thời gian (giây) từ đầu hoạt ảnh đến frame gây sát thương (0:30 là 0.3s).")]
-    public float damageFrameTime = 0.3f; // <-- THỜI ĐIỂM BẮT ĐẦU TÍNH SÁT THƯƠNG
+    public float damageFrameTime = 0.3f; // Chỉ là biến tham chiếu trong Inspector
 
     [Header("References")]
     public LayerMask playerLayer;
+    // public Collider2D attackHitbox; // <--- KHÔNG DÙNG NỮA
 
     private Transform player;
     private Animator animator;
@@ -27,23 +28,17 @@ public class EnemyController : MonoBehaviour
     private bool isDead = false;
     private bool isAttacking = false;
     private bool isFacingRight = true;
-    private float lastAttackTime = 0f; // Khởi tạo an toàn
+    private float lastAttackTime = 0f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        // Sử dụng GameObject.FindGameObjectWithTag an toàn hơn cho lần tìm kiếm đầu tiên
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         // Ngăn tấn công ngay lập tức khi spawn
         lastAttackTime = Time.time;
-
-        // Đảm bảo thời gian chờ còn lại không bị âm
-        if (damageFrameTime >= attackAnimationDuration)
-        {
-            Debug.LogError("Damage Frame Time phải nhỏ hơn Attack Animation Duration!");
-            damageFrameTime = attackAnimationDuration * 0.5f;
-        }
     }
 
     void Update()
@@ -57,6 +52,9 @@ public class EnemyController : MonoBehaviour
             // Dừng di chuyển ngay lập tức khi trong tầm đánh
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
+
+            // Đảm bảo kẻ địch quay mặt về phía người chơi trước khi tấn công
+            FlipTowardsPlayer();
 
             if (!isAttacking && Time.time - lastAttackTime >= attackCooldown)
             {
@@ -81,6 +79,8 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isWalking", true);
 
         Vector2 direction = (player.position - transform.position).normalized;
+
+        // Chỉ di chuyển theo trục X
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
 
         // Lật hướng nếu cần
@@ -88,40 +88,64 @@ public class EnemyController : MonoBehaviour
         else if (direction.x < 0 && isFacingRight) Flip();
     }
 
+    private void FlipTowardsPlayer()
+    {
+        float directionX = player.position.x - transform.position.x;
+        if (directionX > 0 && !isFacingRight) Flip();
+        else if (directionX < 0 && isFacingRight) Flip();
+    }
+
+    // ----------------------------------------------------------------------
+    // PHẦN LOGIC TẤN CÔNG
+    // ----------------------------------------------------------------------
+
     private IEnumerator Attack()
     {
         isAttacking = true;
         animator.SetTrigger("isAttacking");
         rb.linearVelocity = Vector2.zero;
 
-        // 1. Chờ đến Frame Gây Sát Thương (ví dụ: 0.3s)
-        yield return new WaitForSeconds(damageFrameTime);
+        // Coroutine chỉ chờ hoạt ảnh kết thúc (damageFrameTime không còn được dùng ở đây)
+        // Logic gây sát thương được gọi bởi Animation Event.
+        yield return new WaitForSeconds(attackAnimationDuration);
 
-        // 2. Gây Sát Thương (Chỉ xảy ra một lần tại frame này)
+        // Kết thúc Tấn công và Bắt đầu tính Cooldown
+        isAttacking = false;
+        lastAttackTime = Time.time;
+    }
+
+    // HÀM GÂY SÁT THƯƠNG ĐƯỢC GỌI BỞI ANIMATION EVENT (Tại 0:30)
+    public void ApplyDamageToPlayer()
+    {
+        if (player == null) return;
+
+        // 1. Kiểm tra cự ly (Player có trong tầm đánh không?)
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance <= attackRange)
+        if (distance > attackRange)
         {
+            return;
+        }
+
+        // 2. Kiểm tra hướng mặt (Player có ở phía trước Enemy không?)
+        float directionToPlayer = player.position.x - transform.position.x;
+        bool isPlayerInFront = (directionToPlayer > 0 && isFacingRight) ||
+                               (directionToPlayer < 0 && !isFacingRight);
+
+        if (isPlayerInFront)
+        {
+            // 3. Gây sát thương
             var playerController = player.GetComponent<PlayerController>();
             if (playerController != null)
             {
                 playerController.TakeDamage(attackDamage);
+                Debug.Log("Sát thương thành công tại frame hoạt ảnh!");
             }
         }
-
-        // 3. Chờ Hoạt ảnh Kết thúc
-        float waitTimeRemaining = attackAnimationDuration - damageFrameTime;
-
-        // Đảm bảo không chờ nếu thời gian còn lại là 0 hoặc âm (dù đã kiểm tra trong Start)
-        if (waitTimeRemaining > 0)
-        {
-            yield return new WaitForSeconds(waitTimeRemaining);
-        }
-
-        // 4. Kết thúc Tấn công và Bắt đầu tính Cooldown
-        isAttacking = false;
-        // Cập nhật lastAttackTime ngay sau khi hoạt ảnh kết thúc
-        lastAttackTime = Time.time;
     }
+
+    // ----------------------------------------------------------------------
+    // CÁC HÀM CÒN LẠI
+    // ----------------------------------------------------------------------
 
     public void TakeDamage(float dmg)
     {
@@ -138,6 +162,7 @@ public class EnemyController : MonoBehaviour
         isDead = true;
         animator.SetTrigger("isDeath");
         rb.linearVelocity = Vector2.zero;
+        // Xóa logic tắt Hitbox khỏi đây
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
     }
