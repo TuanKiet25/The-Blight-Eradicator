@@ -34,7 +34,6 @@ public class Enemy1Controller : MonoBehaviour
     private bool isChargeMoving = false;
     private Coroutine chargeCoroutine;
 
-    private bool isAttacking = false;
     private float lastAttackTime = 0f;
 
     void Start()
@@ -88,8 +87,7 @@ public class Enemy1Controller : MonoBehaviour
 
     private void SimpleAttack()
     {
-        isAttacking = true;
-        animator.SetTrigger("isAttacking");
+
 
         var playerController = player.GetComponent<PlayerController>();
         if (playerController != null)
@@ -97,7 +95,6 @@ public class Enemy1Controller : MonoBehaviour
             playerController.TakeDamage(attackDamage);
         }
 
-        isAttacking = false;
         lastAttackTime = Time.time;
     }
 
@@ -168,7 +165,6 @@ public class Enemy1Controller : MonoBehaviour
             StopCoroutine(chargeCoroutine);
             chargeCoroutine = null;
         }
-        isAttacking = false;
     }
 
     private void HandleFacing()

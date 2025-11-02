@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // ⚔️ Hàm gây sát thương cho Enemy
+    // Trong PlayerController.cs
     private void PunchDamage()
     {
         // Quét tất cả collider trong phạm vi tấn công
@@ -189,7 +190,15 @@ public class PlayerController : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            // Thử gọi TakeDamage trên EnemyController
+            // ⭐ BỔ SUNG: Kiểm tra BossController ⭐
+            var bossController = enemy.GetComponent<BossController>();
+            if (bossController != null)
+            {
+                bossController.TakeDamage(PunchEnergyCost);
+                continue; // Đánh trúng boss rồi thì không cần kiểm tra tiếp
+            }
+
+            // 1. Thử gọi TakeDamage trên EnemyController (Cận chiến, con cũ)
             var enemyController = enemy.GetComponent<EnemyController>();
             if (enemyController != null)
             {
@@ -197,7 +206,15 @@ public class PlayerController : MonoBehaviour
                 continue;
             }
 
-            // Thử gọi TakeDamage trên Enemy1Controller
+            // 2. Thử gọi TakeDamage trên RangedEnemyController (Tầm xa, con mới)
+            var rangedEnemyController = enemy.GetComponent<RangedEnemyController>();
+            if (rangedEnemyController != null)
+            {
+                rangedEnemyController.TakeDamage(PunchEnergyCost);
+                continue;
+            }
+
+            // 3. Thử gọi TakeDamage trên Enemy1Controller (Nếu bạn vẫn dùng)
             var enemy1Controller = enemy.GetComponent<Enemy1Controller>();
             if (enemy1Controller != null)
             {
