@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -62,11 +63,14 @@ TagManager:
   - name: Ground
     uniqueID: 387943465
     locked: 0
-  - name: UI
-    uniqueID: 3625908219
-    locked: 0
   - name: Character
     uniqueID: 3374470797
+    locked: 0
+  - name: Enemy
+    uniqueID: 4049942605
+    locked: 0
+  - name: UI
+    uniqueID: 3625908219
     locked: 0
   m_RenderingLayers:
   - Default
