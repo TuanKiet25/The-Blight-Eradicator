@@ -8,12 +8,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float maxEnergy = 50;
     [SerializeField] private float dashEnergyCost = 10;
-    [SerializeField] private float PunchEnergyCost = 2;
+    [SerializeField] private float PunchEnergyCost = 2; // Sát thương 1 cú đấm = 2f
     [SerializeField] private float DoubleJumpEnergyCost = 5;
     [SerializeField] private float energyRegenRate = 5f;
     [SerializeField] private int maxLives = 4;
 
-    private int currentLives;   
+    private int currentLives;
     private float currentHealth;
     private float currentEnergy;
 
@@ -22,23 +22,31 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Slider energySlider;
     [SerializeField] private Image heartLivesImage;
     [SerializeField] private Sprite[] heartSprites;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     [Header("Movement Speeds")]
-    [SerializeField] private float walkSpeed = 5.0f; 
+    [SerializeField] private float walkSpeed = 5.0f;
     [SerializeField] private float runSpeed = 8.0f;
     [Header("Jumping")]
     [SerializeField] private float jumpForce = 20.0f;
-    [SerializeField] private int maxJumps = 1; 
+    [SerializeField] private int maxJumps = 1;
     [Header("Ground Check")]
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
+
     [Header("Attacking")]
     [SerializeField] private float attackDuration = 0.5f;
+
+    // ⚔️ THÊM: Biến kiểm tra va chạm tấn công
+    [Header("Attack Properties")]
+    [SerializeField] private Transform attackPoint; // Vị trí điểm tấn công
+    [SerializeField] private float attackRange = 0.5f; // Bán kính tấn công
+    [SerializeField] private LayerMask enemyLayer; // Layer của Enemy
+
     [Header("Dashing")]
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashDuration = 0.5f;
     [Header("Colliders")]
-    [SerializeField] private Collider2D standingCollider; 
+    [SerializeField] private Collider2D standingCollider;
     [SerializeField] private Collider2D deathCollider;
 
     private Animator animator;
@@ -50,6 +58,7 @@ public class PlayerController : MonoBehaviour
     private bool isAttacking = false;
     private bool isDead = false;
     private int jumpCount;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -74,7 +83,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isDead) return;
@@ -82,44 +90,43 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
-        
+
         moveInput = Input.GetAxis("Horizontal");
         isRunning = Input.GetKey(KeyCode.LeftShift);
         HandleMovement();
         HandleJump();
         HandleDashInput();
         HandlePunchAttackInput();
-        if (currentEnergy < maxEnergy)
-        {
-            RegenEnergy(energyRegenRate * Time.deltaTime);
-        }
+
         RegenEnergy(energyRegenRate * Time.deltaTime);
-//testdamage
+
+        //testdamage
         if (Input.GetKeyDown(KeyCode.K))
         {
-            // Gọi hàm TakeDamage với một lượng sát thương bất kỳ (ví dụ: 10)
             TakeDamage(10f);
             Debug.Log("Đã nhận 10 sát thương! Máu còn: " + currentHealth);
         }
 
-        UpdateAnimation(); 
+        UpdateAnimation();
     }
+
     private void UpdateHealthUI()
     {
-            int spriteIndex = maxLives - currentLives;
+        int spriteIndex = maxLives - currentLives;
 
-            if (spriteIndex >= 0 && spriteIndex < heartSprites.Length)
-            {
-                heartLivesImage.sprite = heartSprites[spriteIndex]; 
-            }
+        if (spriteIndex >= 0 && spriteIndex < heartSprites.Length)
+        {
+            heartLivesImage.sprite = heartSprites[spriteIndex];
+        }
     }
+    
 
     private void HandleMovement()
     {
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
-        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);   
-        if(moveInput > 0)  transform.localScale = new Vector3(1, 1, 1);
-        else if(moveInput < 0) transform.localScale = new Vector3(-1, 1, 1);
+        rb.linearVelocity = new Vector2(moveInput * currentSpeed, rb.linearVelocity.y);
+        if (moveInput > 0) transform.localScale = new Vector3(1, 1, 1);
+        else if (moveInput < 0) transform.localScale = new Vector3(-1, 1, 1);
 
     }
     private void HandleJump()
@@ -129,22 +136,16 @@ public class PlayerController : MonoBehaviour
         {
             jumpCount = maxJumps;
         }
-        if (Input.GetButtonDown("Jump") )
+        if (Input.GetButtonDown("Jump"))
         {
             if (jumpCount > 0)
             {
-                jumpCount--; // Trừ 1 lượt nhảy
-
-                // Mẹo hay: Reset vận tốc Y để cú nhảy 2 mạnh như cú nhảy 1
+                jumpCount--;
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
-
-                // Thêm lực nhảy (giữ nguyên)
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
 
-                // 5. Nếu đây là cú nhảy trên không (Double Jump)
                 if (!isGrounded)
                 {
-                    // Kích hoạt animation Double Jump
                     animator.SetTrigger("isDoubleJumping");
                     UseEnergy(DoubleJumpEnergyCost);
                 }
@@ -153,7 +154,6 @@ public class PlayerController : MonoBehaviour
     }
     private void HandleDashInput()
     {
-        
         if (Input.GetKeyDown(KeyCode.W) && currentEnergy >= dashEnergyCost)
         {
             UseEnergy(dashEnergyCost);
@@ -164,53 +164,83 @@ public class PlayerController : MonoBehaviour
     {
         isDashing = true;
         float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f; // Tạm thời bỏ trọng lực để lướt thẳng
-        rb.linearVelocity = new Vector2(transform.localScale.x * dashForce, 0f); // Dùng velocity để có cú lướt dứt khoát
+        rb.gravityScale = 0f;
+        rb.linearVelocity = new Vector2(transform.localScale.x * dashForce, 0f);
 
-        // --- GIAI ĐOẠN ĐANG LƯỚT ---
-        yield return new WaitForSeconds(dashDuration); // Tạm dừng hàm trong một khoảng thời gian
+        yield return new WaitForSeconds(dashDuration);
 
-        // --- GIAI ĐOẠN KẾT THÚC LƯỚT ---
-        rb.gravityScale = originalGravity; // Khôi phục trọng lực
+        rb.gravityScale = originalGravity;
         isDashing = false;
-        // Có thể thêm một lực đẩy nhẹ để nhân vật không dừng đột ngột
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
     }
     private void HandlePunchAttackInput()
     {
-        // "Fire1" là nút chuột trái hoặc Ctrl trái (mặc định của Unity)
-        if (Input.GetButtonDown("Fire1") && isGrounded && currentEnergy >= PunchEnergyCost)
+        if (Input.GetButtonDown("Fire1") && !isAttacking && currentEnergy >= PunchEnergyCost)
         {
             UseEnergy(PunchEnergyCost);
             StartCoroutine(Attack());
         }
     }
+
+    // ⚔️ Hàm gây sát thương cho Enemy
+    private void PunchDamage()
+    {
+        // Quét tất cả collider trong phạm vi tấn công
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            // Thử gọi TakeDamage trên EnemyController
+            var enemyController = enemy.GetComponent<EnemyController>();
+            if (enemyController != null)
+            {
+                enemyController.TakeDamage(PunchEnergyCost);
+                continue;
+            }
+
+            // Thử gọi TakeDamage trên Enemy1Controller
+            var enemy1Controller = enemy.GetComponent<Enemy1Controller>();
+            if (enemy1Controller != null)
+            {
+                enemy1Controller.TakeDamage(PunchEnergyCost);
+            }
+        }
+    }
+
     private IEnumerator Attack()
     {
         isAttacking = true;
-        animator.SetTrigger("isAttacking"); // Kích hoạt Trigger
+        animator.SetTrigger("isAttacking");
 
-        // (Sau này bạn sẽ thêm code tạo hitbox ở đây)
+        // 1. Chờ 0.1s để khớp với animation frame gây sát thương
+        yield return new WaitForSeconds(0.1f);
 
-        // Chờ animation tấn công kết thúc
-        yield return new WaitForSeconds(attackDuration);
+        // 2. Gây Sát Thương
+        PunchDamage();
+
+        // 3. Chờ phần còn lại của hoạt ảnh
+        float waitTimeRemaining = attackDuration - 0.1f;
+        if (waitTimeRemaining > 0)
+        {
+            yield return new WaitForSeconds(waitTimeRemaining);
+        }
 
         isAttacking = false;
     }
+
+    // ... (Các hàm UseEnergy, TakeDamage, HandleDie, RegenEnergy giữ nguyên logic của bạn) ...
+
     public void UseEnergy(float amount)
     {
         currentEnergy -= amount;
         if (currentEnergy < 0) currentEnergy = 0;
-        energySlider.value = currentEnergy; // Cập nhật UI
+        energySlider.value = currentEnergy;
     }
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-
-        // Đảm bảo máu không tụt xuống dưới 0
         if (currentHealth < 0) currentHealth = 0;
-
-        hpSlider.value = currentHealth; // Cập nhật UI
+        hpSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {
@@ -223,40 +253,43 @@ public class PlayerController : MonoBehaviour
             else
             {
                 animator.SetTrigger("isLostHeart");
-                currentHealth = maxHealth;      // Hồi lại 100 HP
-                hpSlider.value = currentHealth; // Cập nhật lại thanh máu
+                currentHealth = maxHealth;
+                hpSlider.value = currentHealth;
                 UpdateHealthUI();
-            }     
+            }
         }
     }
     private void HandleDie()
     {
         isDead = true;
-        animator.SetTrigger("isDeath"); // Kích hoạt Trigger chết
+        animator.SetTrigger("isDeath");
         standingCollider.enabled = false;
         deathCollider.enabled = true;
-        // Tắt duy chuyển ngang
         rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-
-        // Tắt collider để kẻ địch có thể đi xuyên qua
         GetComponent<Collider2D>().enabled = false;
-        // Tắt script này đi để người chơi không thể điều khiển được nữa
         this.enabled = false;
     }
     private void RegenEnergy(float amount)
     {
         currentEnergy += amount;
         if (currentEnergy > maxEnergy) currentEnergy = maxEnergy;
-        energySlider.value = currentEnergy; // Cập nhật UI
+        energySlider.value = currentEnergy;
     }
     private void UpdateAnimation()
     {
-
         bool isMoving = moveInput != 0;
         bool isJumping = !isGrounded;
         animator.SetBool("isWalking", isMoving && !isRunning);
         animator.SetBool("isJumping", isJumping);
         animator.SetBool("isRunning", isMoving && isRunning);
         animator.SetBool("isDashing", isDashing);
+    }
+
+    // ℹ️ Hỗ trợ Debug/Inspector: Vẽ Attack Range
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
