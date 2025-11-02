@@ -1,0 +1,7 @@
+# Các tệp Unity sẽ được gộp bằng công cụ unityyamlmerge
+*.unity merge=unityyamlmerge
+*.prefab merge=unityyamlmerge
+*.asset merge=unityyamlmerge
+*.controller merge=unityyamlmerge
+*.anim merge=unityyamlmerge
+*.scenefile merge=unityyamlmerge
