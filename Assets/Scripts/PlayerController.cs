@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
             heartLivesImage.sprite = heartSprites[spriteIndex];
         }
     }
+    
 
     private void HandleMovement()
     {
