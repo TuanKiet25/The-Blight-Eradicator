@@ -1,0 +1,392 @@
+fileFormatVersion: 2
+guid: f7ac1f713aaf2604fb20c9d594667845
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2043781706858882271
+    second: Screenshot_2025-11-03_094911-removebg-preview_0
+  - first:
+      213: 2263501846160261415
+    second: Screenshot_2025-11-03_094911-removebg-preview_1
+  - first:
+      213: -8920347597128976749
+    second: Screenshot_2025-11-03_094911-removebg-preview_2
+  - first:
+      213: -8032343730014806456
+    second: Screenshot_2025-11-03_094911-removebg-preview_3
+  - first:
+      213: 483123433095657066
+    second: Screenshot_2025-11-03_094911-removebg-preview_4
+  - first:
+      213: -6292265537412409788
+    second: Screenshot_2025-11-03_094911-removebg-preview_5
+  - first:
+      213: -591299045973780328
+    second: Screenshot_2025-11-03_094911-removebg-preview_6
+  - first:
+      213: -7808999220377598059
+    second: Screenshot_2025-11-03_094911-removebg-preview_7
+  - first:
+      213: 9207772757894145036
+    second: Screenshot_2025-11-03_094911-removebg-preview_8
+  - first:
+      213: -8824870366557575274
+    second: Screenshot_2025-11-03_094911-removebg-preview_9
+  - first:
+      213: 9070713999385575366
+    second: Screenshot_2025-11-03_094911-removebg-preview_10
+  - first:
+      213: 2115873457210851912
+    second: Screenshot_2025-11-03_094911-removebg-preview_11
+  - first:
+      213: -337534971355332351
+    second: Screenshot_2025-11-03_094911-removebg-preview_12
+  - first:
+      213: -1798128824198989054
+    second: Screenshot_2025-11-03_094911-removebg-preview_13
+  - first:
+      213: -306751729085164886
+    second: Screenshot_2025-11-03_094911-removebg-preview_14
+  - first:
+      213: 815135894235449735
+    second: Screenshot_2025-11-03_094911-removebg-preview_15
+  - first:
+      213: -2724446231160688341
+    second: Screenshot_2025-11-03_094911-removebg-preview_16
+  - first:
+      213: -1691756536370436894
+    second: Screenshot_2025-11-03_094911-removebg-preview_17
+  - first:
+      213: -2825860018104559030
+    second: Screenshot_2025-11-03_094911-removebg-preview_18
+  - first:
+      213: -5430787255558251968
+    second: Screenshot_2025-11-03_094911-removebg-preview_19
+  - first:
+      213: -6993206323918954552
+    second: Screenshot_2025-11-03_094911-removebg-preview_20
+  - first:
+      213: 530104035246957678
+    second: Screenshot_2025-11-03_094911-removebg-preview_21
+  - first:
+      213: -3136104585915775799
+    second: Screenshot_2025-11-03_094911-removebg-preview_22
+  - first:
+      213: 5927615914503861334
+    second: Screenshot_2025-11-03_094911-removebg-preview_23
+  - first:
+      213: 9092941733032430481
+    second: Screenshot_2025-11-03_094911-removebg-preview_24
+  - first:
+      213: -6076557224909258581
+    second: Screenshot_2025-11-03_094911-removebg-preview_25
+  - first:
+      213: -3290104857231668242
+    second: Screenshot_2025-11-03_094911-removebg-preview_26
+  - first:
+      213: -3106218147984933774
+    second: Screenshot_2025-11-03_094911-removebg-preview_27
+  - first:
+      213: -7817137349878176532
+    second: Screenshot_2025-11-03_094911-removebg-preview_28
+  - first:
+      213: -6913840614191745684
+    second: Screenshot_2025-11-03_094911-removebg-preview_29
+  - first:
+      213: -7825419935167999770
+    second: Screenshot_2025-11-03_094911-removebg-preview_30
+  - first:
+      213: 5480531744144584519
+    second: Screenshot_2025-11-03_094911-removebg-preview_31
+  - first:
+      213: 6718632453248346138
+    second: Screenshot_2025-11-03_094911-removebg-preview_32
+  - first:
+      213: 2731336894292699671
+    second: Screenshot_2025-11-03_094911-removebg-preview_33
+  - first:
+      213: 495565804906207390
+    second: Screenshot_2025-11-03_094911-removebg-preview_34
+  - first:
+      213: -6129730533976006075
+    second: Screenshot_2025-11-03_094911-removebg-preview_35
+  - first:
+      213: 87180381593770568
+    second: Screenshot_2025-11-03_094911-removebg-preview_36
+  - first:
+      213: -820954414432220584
+    second: Screenshot_2025-11-03_094911-removebg-preview_37
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Screenshot_2025-11-03_094911-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 506
+        width: 113
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4e3cb42a8fc5c10800000000000000
+      internalID: 2043781706858882271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-03_094911-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 387
+        width: 139
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89894b886a84bc7f0800000000000000
+      internalID: -591299045973780328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-03_094911-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 267
+        width: 204
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 101081d5bb5d05bf0800000000000000
+      internalID: -337534971355332351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-03_094911-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 149
+        width: 162
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf9bc566e323fe90800000000000000
+      internalID: -6993206323918954552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screenshot_2025-11-03_094911-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 28
+        width: 179
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65be6da79a1d00a0800000000000000
+      internalID: -6913840614191745684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: cb295398378530d46bed5f82b630edf6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Screenshot_2025-11-03_094911-removebg-preview_0: 2043781706858882271
+      Screenshot_2025-11-03_094911-removebg-preview_1: 2263501846160261415
+      Screenshot_2025-11-03_094911-removebg-preview_10: 9070713999385575366
+      Screenshot_2025-11-03_094911-removebg-preview_11: 2115873457210851912
+      Screenshot_2025-11-03_094911-removebg-preview_12: -337534971355332351
+      Screenshot_2025-11-03_094911-removebg-preview_13: -1798128824198989054
+      Screenshot_2025-11-03_094911-removebg-preview_14: -306751729085164886
+      Screenshot_2025-11-03_094911-removebg-preview_15: 815135894235449735
+      Screenshot_2025-11-03_094911-removebg-preview_16: -2724446231160688341
+      Screenshot_2025-11-03_094911-removebg-preview_17: -1691756536370436894
+      Screenshot_2025-11-03_094911-removebg-preview_18: -2825860018104559030
+      Screenshot_2025-11-03_094911-removebg-preview_19: -5430787255558251968
+      Screenshot_2025-11-03_094911-removebg-preview_2: -8920347597128976749
+      Screenshot_2025-11-03_094911-removebg-preview_20: -6993206323918954552
+      Screenshot_2025-11-03_094911-removebg-preview_21: 530104035246957678
+      Screenshot_2025-11-03_094911-removebg-preview_22: -3136104585915775799
+      Screenshot_2025-11-03_094911-removebg-preview_23: 5927615914503861334
+      Screenshot_2025-11-03_094911-removebg-preview_24: 9092941733032430481
+      Screenshot_2025-11-03_094911-removebg-preview_25: -6076557224909258581
+      Screenshot_2025-11-03_094911-removebg-preview_26: -3290104857231668242
+      Screenshot_2025-11-03_094911-removebg-preview_27: -3106218147984933774
+      Screenshot_2025-11-03_094911-removebg-preview_28: -7817137349878176532
+      Screenshot_2025-11-03_094911-removebg-preview_29: -6913840614191745684
+      Screenshot_2025-11-03_094911-removebg-preview_3: -8032343730014806456
+      Screenshot_2025-11-03_094911-removebg-preview_30: -7825419935167999770
+      Screenshot_2025-11-03_094911-removebg-preview_31: 5480531744144584519
+      Screenshot_2025-11-03_094911-removebg-preview_32: 6718632453248346138
+      Screenshot_2025-11-03_094911-removebg-preview_33: 2731336894292699671
+      Screenshot_2025-11-03_094911-removebg-preview_34: 495565804906207390
+      Screenshot_2025-11-03_094911-removebg-preview_35: -6129730533976006075
+      Screenshot_2025-11-03_094911-removebg-preview_36: 87180381593770568
+      Screenshot_2025-11-03_094911-removebg-preview_37: -820954414432220584
+      Screenshot_2025-11-03_094911-removebg-preview_4: 483123433095657066
+      Screenshot_2025-11-03_094911-removebg-preview_5: -6292265537412409788
+      Screenshot_2025-11-03_094911-removebg-preview_6: -591299045973780328
+      Screenshot_2025-11-03_094911-removebg-preview_7: -7808999220377598059
+      Screenshot_2025-11-03_094911-removebg-preview_8: 9207772757894145036
+      Screenshot_2025-11-03_094911-removebg-preview_9: -8824870366557575274
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
