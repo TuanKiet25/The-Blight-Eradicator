@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+*.dat filter=lfs diff=lfs merge=lfs -text
+*.unity filter=lfs diff=lfs merge=lfs -text
+=======
 # Các tệp Unity sẽ được gộp bằng công cụ unityyamlmerge
 *.unity merge=unityyamlmerge
 *.prefab merge=unityyamlmerge
@@ -5,3 +9,4 @@
 *.controller merge=unityyamlmerge
 *.anim merge=unityyamlmerge
 *.scenefile merge=unityyamlmerge
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc

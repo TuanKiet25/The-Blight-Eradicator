@@ -18,12 +18,25 @@ public class Enemy1Controller : MonoBehaviour
     [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
     [SerializeField] private float playerPunchDamage = 2f;
     [Tooltip("Số lần Player phải đấm để Enemy chết. (Cần là 5)")]
+<<<<<<< HEAD
+    [SerializeField] private int requiredPunchesToKill = 5;
+=======
     [SerializeField] private int requiredPunchesToKill = 5; // Yêu cầu 5 đấm
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     private float maxHealth;
     private float currentHealth;
 
     [Header("References")]
     public LayerMask playerLayer;
+<<<<<<< HEAD
+    
+    [Header("Audio")]
+    public AudioClip idleSound;
+    public AudioClip walkSound;
+    public AudioClip deathSound;
+    private AudioSource audioSource;
+=======
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
 
     private Transform player;
     private Rigidbody2D rb;
@@ -34,7 +47,10 @@ public class Enemy1Controller : MonoBehaviour
     private bool isChargeMoving = false;
     private Coroutine chargeCoroutine;
 
+<<<<<<< HEAD
+=======
     private bool isAttacking = false;
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     private float lastAttackTime = 0f;
 
     void Start()
@@ -42,6 +58,18 @@ public class Enemy1Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+<<<<<<< HEAD
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+
+        // Do not auto-play idle on spawn. Idle will resume when enemy is stopped
+        // and the player is nearby (handled in StopChargeMovement()).
+=======
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
 
         lastAttackTime = Time.time;
 
@@ -88,16 +116,22 @@ public class Enemy1Controller : MonoBehaviour
 
     private void SimpleAttack()
     {
+<<<<<<< HEAD
+=======
         isAttacking = true;
         animator.SetTrigger("isAttacking");
 
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         var playerController = player.GetComponent<PlayerController>();
         if (playerController != null)
         {
             playerController.TakeDamage(attackDamage);
         }
 
+<<<<<<< HEAD
+=======
         isAttacking = false;
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         lastAttackTime = Time.time;
     }
 
@@ -130,6 +164,19 @@ public class Enemy1Controller : MonoBehaviour
         animator.SetBool("isPreparing", false);
         animator.SetBool("isWalking", true);
 
+<<<<<<< HEAD
+        // Play walk loop (switch from idle)
+        if (walkSound != null && audioSource != null)
+        {
+            audioSource.clip = walkSound;
+            audioSource.loop = true;
+            audioSource.Play();
+            Debug.Log(gameObject.name + " playing walk sound: " + walkSound.name);
+        }
+
+
+=======
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         while (isChargeMoving && player != null)
         {
             float dist = Vector2.Distance(transform.position, player.position);
@@ -158,6 +205,33 @@ public class Enemy1Controller : MonoBehaviour
         isChargeMoving = false;
         isChargingDelay = false;
 
+<<<<<<< HEAD
+        // Switch back to idle or stop audio — only resume idle if player is nearby
+        if (audioSource != null)
+        {
+            if (idleSound != null && player != null)
+            {
+                float pdist = Vector2.Distance(transform.position, player.position);
+                if (pdist <= detectRange)
+                {
+                    audioSource.clip = idleSound;
+                    audioSource.loop = true;
+                    if (!audioSource.isPlaying) audioSource.Play();
+                    Debug.Log(gameObject.name + " resumed idle sound: " + idleSound.name + " (player distance=" + pdist + ")");
+                }
+                else
+                {
+                    if (audioSource.isPlaying) audioSource.Stop();
+                }
+            }
+            else
+            {
+                if (audioSource.isPlaying) audioSource.Stop();
+            }
+        }
+
+=======
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         if (rb != null) rb.linearVelocity = Vector2.zero;
 
         animator.SetBool("isWalking", false);
@@ -168,7 +242,10 @@ public class Enemy1Controller : MonoBehaviour
             StopCoroutine(chargeCoroutine);
             chargeCoroutine = null;
         }
+<<<<<<< HEAD
+=======
         isAttacking = false;
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     }
 
     private void HandleFacing()
@@ -180,6 +257,47 @@ public class Enemy1Controller : MonoBehaviour
         transform.localScale = scale;
     }
 
+<<<<<<< HEAD
+    // Optional: small context menu tests from Inspector
+    [ContextMenu("Test Play Idle Sound")]
+    private void TestPlayIdle()
+    {
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (idleSound != null && audioSource != null)
+        {
+            audioSource.clip = idleSound;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+        else Debug.LogWarning("Idle sound or AudioSource missing on " + gameObject.name);
+    }
+
+    [ContextMenu("Test Play Walk Sound")]
+    private void TestPlayWalk()
+    {
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (walkSound != null && audioSource != null)
+        {
+            audioSource.clip = walkSound;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+        else Debug.LogWarning("Walk sound or AudioSource missing on " + gameObject.name);
+    }
+
+    [ContextMenu("Test Play Death Sound")]
+    private void TestPlayDeath()
+    {
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+        if (deathSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+        else Debug.LogWarning("Death sound or AudioSource missing on " + gameObject.name);
+    }
+
+=======
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     public void TakeDamage(float dmg)
     {
         if (isDead) return;
@@ -208,6 +326,23 @@ public class Enemy1Controller : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
 
+<<<<<<< HEAD
+        animator.SetTrigger("isDeath");
+
+        // Play death sound (one-shot)
+        if (deathSound != null && audioSource != null)
+        {
+            // stop loop
+            if (audioSource.isPlaying) audioSource.Stop();
+            audioSource.PlayOneShot(deathSound);
+            Debug.Log(gameObject.name + " played death sound: " + deathSound.name);
+        }
+
+        GetComponent<Collider2D>().enabled = false;
+
+        Destroy(gameObject, 5f);
+
+=======
         // 🔑 ĐÃ SỬA: Gọi Trigger isDeath mới!
         animator.SetTrigger("isDeath");
 
@@ -219,6 +354,7 @@ public class Enemy1Controller : MonoBehaviour
         Destroy(gameObject, 5f);
 
         // Tắt script này (nên đặt cuối cùng)
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         this.enabled = false;
     }
 
@@ -229,4 +365,8 @@ public class Enemy1Controller : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
