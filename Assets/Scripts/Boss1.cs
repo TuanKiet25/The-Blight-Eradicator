@@ -8,8 +8,8 @@ public class BossController : MonoBehaviour
     public float attackRange = 2f;
     public float attackCooldown = 1.5f;
     public float attackDamage = 15f;
-    public int attacksPerPhase = 3;       // Mỗi đợt boss đánh bao nhiêu lần
-    public float restTimeBetweenPhases = 6f; // Boss nghỉ giữa các đợt đánh
+    public int attacksPerPhase = 3;
+    public float restTimeBetweenPhases = 6f;
 
     [Header("Health")]
     public float maxHealth = 50f;
@@ -19,14 +19,20 @@ public class BossController : MonoBehaviour
     public float attackAnimationDuration = 1.2f;
     public float damageFrameTime = 0.4f;
 
+    [Header("Audio")]
+    public AudioClip attackSound;
+    public AudioClip hurtSound;
+    public AudioClip deathSound;
+    public AudioClip walkSound;
+    private AudioSource audioSource;
+
     [Header("References")]
     public LayerMask playerLayer;
     private Transform player;
     private Animator animator;
     private Rigidbody2D rb;
 
-    // ⭐ THAM CHIẾU THANH MÁU MỚI ⭐
-    public BossHealthBar healthBar; // Cần kéo Canvas/Slider vào đây trong Inspector
+    public BossHealthBar healthBar;
 
     private bool isDead = false;
     private bool isAttacking = false;
@@ -38,16 +44,23 @@ public class BossController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+
+        // Ensure 2D playback and reasonable default volume
+        audioSource.spatialBlend = 0f; // 0 = 2D
+        audioSource.volume = Mathf.Clamp01(audioSource.volume <= 0f ? 0.8f : audioSource.volume);
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         currentHealth = maxHealth;
         lastAttackTime = Time.time;
 
-        // ⭐ KHỞI TẠO MÁU TỐI ĐA CHO THANH MÁU ⭐
         if (healthBar != null)
-        {
             healthBar.SetMaxHealth(maxHealth);
-        }
     }
 
     void Update()
@@ -84,6 +97,17 @@ public class BossController : MonoBehaviour
 
         if (direction.x > 0 && !isFacingRight) Flip();
         else if (direction.x < 0 && isFacingRight) Flip();
+
+        // Chơi tiếng bước đi nhẹ nhẹ (loop). Chỉ phát khi gần người chơi.
+        float distance = Vector2.Distance(transform.position, player.position);
+        if (walkSound != null && audioSource != null && !audioSource.isPlaying && !isAttacking && !isResting && distance <= attackRange)
+        {
+            audioSource.clip = walkSound;
+            audioSource.loop = true;
+            audioSource.Play();
+            Debug.Log("Boss playing walk loop: " + walkSound.name);
+        }
+
     }
 
     private IEnumerator AttackPhase()
@@ -98,9 +122,24 @@ public class BossController : MonoBehaviour
             animator.SetTrigger("isAttacking");
             rb.linearVelocity = Vector2.zero;
 
-            yield return new WaitForSeconds(attackAnimationDuration);
+            // ⭐ Phát âm thanh tấn công đúng lúc boss vung tay
+            // stop walk loop (if any) so it doesn't clash with one-shot
+            if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound)
+            {
+                audioSource.Stop();
+            }
+            yield return new WaitForSeconds(damageFrameTime);
+            if (attackSound != null && audioSource != null)
+            {
+                audioSource.PlayOneShot(attackSound);
+            }
 
+            // ⭐ Gây sát thương sau khi đánh trúng
             ApplyDamageToPlayer();
+
+            // Đợi cho hết animation
+            yield return new WaitForSeconds(attackAnimationDuration - damageFrameTime);
+
             yield return new WaitForSeconds(attackCooldown);
         }
 
@@ -112,6 +151,11 @@ public class BossController : MonoBehaviour
     {
         isResting = true;
         animator.SetBool("isWalking", false);
+        // stop walking loop when resting
+        if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound)
+        {
+            audioSource.Stop();
+        }
         yield return new WaitForSeconds(restTimeBetweenPhases);
         isResting = false;
     }
@@ -131,8 +175,7 @@ public class BossController : MonoBehaviour
             var playerController = player.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                // Giả định PlayerController có hàm TakeDamage
-                // playerController.TakeDamage(attackDamage); 
+                // playerController.TakeDamage(attackDamage);
             }
         }
     }
@@ -144,10 +187,12 @@ public class BossController : MonoBehaviour
         currentHealth -= dmg;
         Debug.Log("Boss nhận " + dmg + " sát thương. Máu còn: " + currentHealth);
 
-        // ⭐ CẬP NHẬT THANH MÁU ⭐
         if (healthBar != null)
-        {
             healthBar.SetHealth(currentHealth);
+
+        if (hurtSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hurtSound);
         }
 
         if (currentHealth <= 0)
@@ -166,12 +211,18 @@ public class BossController : MonoBehaviour
         isDead = true;
 
         animator.SetTrigger("isDeath");
-
-        // ⭐ ẨN THANH MÁU KHI BOSS CHẾT ⭐
-        if (healthBar != null)
+        // stop any loop and play death one-shot
+        if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound)
         {
-            healthBar.gameObject.SetActive(false);
+            audioSource.Stop();
         }
+        if (deathSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
+        if (healthBar != null)
+            healthBar.gameObject.SetActive(false);
 
         if (rb != null)
         {
@@ -180,9 +231,15 @@ public class BossController : MonoBehaviour
         }
 
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
 
-        Destroy(gameObject, 2f);
+        // ⭐ Giữ xác lâu hơn rồi mới biến mất
+        StartCoroutine(FadeAndDestroy(4f)); // 4 giây sau mới xoá
+    }
+
+    private IEnumerator FadeAndDestroy(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(gameObject);
     }
 
     private void FlipTowardsPlayer()
@@ -195,11 +252,18 @@ public class BossController : MonoBehaviour
     private void Flip()
     {
         isFacingRight = !isFacingRight;
-        // Giả sử SpriteRenderer nằm trực tiếp trên Boss,
-        // nếu không, hãy áp dụng logic Flip của bạn
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
     }
 
     private void OnDrawGizmosSelected()

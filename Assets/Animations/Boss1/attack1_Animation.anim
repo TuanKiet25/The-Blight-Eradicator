@@ -28,9 +28,9 @@ AnimationClip:
       value: {fileID: 8855121072507666952, guid: 5741730949e47cf4e921c7dd7f0236d2, type: 3}
     - time: 0.65
       value: {fileID: -584496305276438258, guid: 5741730949e47cf4e921c7dd7f0236d2, type: 3}
-    - time: 0.8666667
+    - time: 0.68333334
       value: {fileID: 6420136936686048148, guid: 5741730949e47cf4e921c7dd7f0236d2, type: 3}
-    - time: 1.0333333
+    - time: 0.76666665
       value: {fileID: -8282437041194695644, guid: 5741730949e47cf4e921c7dd7f0236d2, type: 3}
     - time: 1.1666666
       value: {fileID: -8282437041194695644, guid: 5741730949e47cf4e921c7dd7f0236d2, type: 3}
@@ -91,7 +91,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1.0333333
+  - time: 0.76666665
     functionName: ApplyDamageToPlayer
     data: 
     objectReferenceParameter: {fileID: 0}

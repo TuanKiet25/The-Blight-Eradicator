@@ -213,3 +213,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
+  idleSound: {fileID: 0}
+  walkSound: {fileID: 0}
+  hurtSound: {fileID: 8300000, guid: d1e948929f83fd249b36549eb38f357d, type: 3}
+  attackSound: {fileID: 8300000, guid: 371fa162ce26a6c40b5783d0fe23359a, type: 3}
+  deathSound: {fileID: 8300000, guid: 7f5f032856e6d094eab67dac9a476b25, type: 3}
