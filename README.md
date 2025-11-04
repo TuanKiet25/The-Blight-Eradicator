@@ -31,8 +31,6 @@ Khi Kael tiến sâu vào Lõi Rừng Thép, anh phải đối mặt với các 
 - UI: Unity uGUI + TextMeshPro
 - Scripting: C# (Unity scripting API — theo phiên bản Editor)
 
-(Gợi ý hiển thị: giữ phần badge này ở đầu README để nổi bật trên GitHub.)
-
 ## Yêu cầu & hướng dẫn mở project
 
 1. Cài Unity Editor phiên bản tương thích với `ProjectVersion.txt`. Nếu Editor báo khác biệt, hãy dùng Unity Hub để cài chính xác hoặc chọn phiên bản gần nhất.
@@ -61,3 +59,7 @@ Khi Kael tiến sâu vào Lõi Rừng Thép, anh phải đối mặt với các 
 1. Mở `Assets/Scenes` trong Unity -> xác định scene khởi động (MainMenu hoặc Intro) và thêm vào Build Settings nếu chưa có.
 2. Chạy Play, kiểm tra Player movement, nhảy, dash, tấn công và UI.
 3. Kiểm tra `PlayerPrefs` key `LastSavedScene` để xác thực Continue button.
+
+## Nhóm phát triển
+
+Dự án này được phát triển bởi một nhóm sinh viên từ Đại học FPT (FPT University) trong khuôn khổ khóa học/đồ án. Nhóm chịu trách nhiệm về thiết kế gameplay, lập trình, và tích hợp tài sản.
