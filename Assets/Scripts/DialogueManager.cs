@@ -9,7 +9,8 @@ public class DialogueManager : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] public Image portraitA; // Ảnh nhân vật A (trái)
     [SerializeField] public Image portraitB; // Ảnh nhân vật B (phải)
-    [SerializeField] public TextMeshProUGUI speakerNameText;
+    [SerializeField] public TextMeshProUGUI speakerNameLeftText;  // Tên người nói bên trái
+    [SerializeField] public TextMeshProUGUI speakerNameRightText; // Tên người nói bên phải
     [SerializeField] public TextMeshProUGUI dialogueContentText;
     [SerializeField] public GameObject continueIcon; // Icon "nhấn để tiếp tục"
 
@@ -58,21 +59,26 @@ public class DialogueManager : MonoBehaviour
         DialogueLine line = allDialogueLines[currentLineIndex];
 
         // Cập nhật tên và nội dung
-        speakerNameText.text = line.speakerName;
-        dialogueContentText.text = line.lineText; // (Bạn có thể làm hiệu ứng gõ chữ ở đây nếu muốn)
+        speakerNameLeftText.gameObject.SetActive(false);
+        speakerNameRightText.gameObject.SetActive(false);
+        
 
         // Cập nhật hình ảnh (Làm mờ/rõ)
         if (line.isSpeakerA)
         {
+            speakerNameLeftText.text = line.speakerName;
+            speakerNameLeftText.gameObject.SetActive(true);
             portraitA.color = activeSpeakerColor;
             portraitB.color = inactiveSpeakerColor;
         }
         else
         {
+            speakerNameRightText.text = line.speakerName;
+            speakerNameRightText.gameObject.SetActive(true);
             portraitA.color = inactiveSpeakerColor;
             portraitB.color = activeSpeakerColor;
         }
-
+        dialogueContentText.text = line.lineText; // (Bạn có thể làm hiệu ứng gõ chữ ở đây nếu muốn)
         // (Chờ 1 chút để tránh người chơi spam nút)
         yield return new WaitForSeconds(0.2f);
 

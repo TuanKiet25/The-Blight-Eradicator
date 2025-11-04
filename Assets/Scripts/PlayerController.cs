@@ -292,4 +292,17 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    public void StopAllMovement()
+    {
+        // 1. Dừng vật lý ngay lập tức
+        rb.linearVelocity = Vector2.zero;
+
+        // 2. Reset lại input (để phòng lỗi)
+        moveInput = 0f;
+        isRunning = false;
+
+        // 3. Reset lại animation (quan trọng)
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isRunning", false);
+    }
 }
