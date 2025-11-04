@@ -19,15 +19,19 @@ Khi Kael tiến sâu vào Lõi Rừng Thép, anh phải đối mặt với các 
 - Kẻ địch đa dạng: kẻ địch cơ bản (di chuyển/tấn công), kẻ địch charge (phát hiện và lao nhanh), trùm cấp cao (Alpha Blight).
 - Dialogue / Intro: Hệ thống thoại với portrait, chuyển cảnh sang Level_1 khi thoại kết thúc.
 
-## Công nghệ & phiên bản
+## Công nghệ & phiên bản (nổi bật)
 
-- Engine: Unity (project chứa file `ProjectSettings/ProjectVersion.txt` báo: `m_EditorVersion: 6000.2.3f1`). Vui lòng kiểm tra Unity Hub / Editor để mở bằng phiên bản tương thích (Unity Editor matching project).
-- Renderer: Universal Render Pipeline (URP) — package `com.unity.render-pipelines.universal` v17.2.0.
-- Input: `com.unity.inputsystem` v1.14.2 có trong `Packages/manifest.json`, nhưng mã hiện tại sử dụng API Input "legacy" (Input.GetAxis, Input.GetButtonDown). Có thể dùng Input System mới nếu muốn hỗ trợ remapping/controller.
-- Cinemachine: `com.unity.cinemachine` v3.1.5
-- 2D tools: `com.unity.2d.animation`, `com.unity.2d.tilemap`, `com.unity.2d.spriteshape`, `com.unity.2d.psdimporter`, v.v.
-- UI/Text: Unity uGUI + TextMeshPro (ví dụ scripts từ TextMesh Pro included)
-- Scripting: C# (Unity scripting API). Phiên bản C# thực tế phụ thuộc vào phiên bản Unity Editor.
+![Unity](https://img.shields.io/badge/Unity-6000.2.3f1-1e90ff?logo=unity&logoColor=ffffff) ![URP v17.2.0](https://img.shields.io/badge/URP-17.2.0-8a2be2) ![Input System v1.14.2](https://img.shields.io/badge/Input%20System-1.14.2-2b9348) ![Cinemachine v3.1.5](https://img.shields.io/badge/Cinemachine-3.1.5-ff7f50) ![TextMeshPro](https://img.shields.io/badge/TextMeshPro-included-0057ff) ![2D Tools](https://img.shields.io/badge/2D--Tools-included-6a5acd)
+
+- Unity Editor: m_EditorVersion: 6000.2.3f1 (mở project bằng phiên bản tương thích từ ProjectSettings/ProjectVersion.txt)
+- Renderer: Universal Render Pipeline (com.unity.render-pipelines.universal v17.2.0)
+- Input package: com.unity.inputsystem v1.14.2 (mã hiện tại dùng Input "legacy")
+- Cinemachine: com.unity.cinemachine v3.1.5
+- 2D packages: 2D Animation, Tilemap, SpriteShape, PSD Importer, v.v.
+- UI: Unity uGUI + TextMeshPro
+- Scripting: C# (Unity scripting API — theo phiên bản Editor)
+
+(Gợi ý hiển thị: giữ phần badge này ở đầu README để nổi bật trên GitHub.)
 
 ## Yêu cầu & hướng dẫn mở project
 
@@ -38,13 +42,13 @@ Khi Kael tiến sâu vào Lõi Rừng Thép, anh phải đối mặt với các 
 
 ## Điều khiển (mặc định từ code)
 
-- Di chuyển trái/phải: Input trục "Horizontal" (A/D hoặc Left/Right arrow tuỳ Input settings).
-- Nhảy: nút "Jump" (mặc định Space).
-- Double-jump: Space 2 lần.
-- Chạy: giữ Left Shift.
+- Di chuyển trái/phải: Input trục "Horizontal" (`A`/`D` hoặc `Left`/`Right` arrow tuỳ Input settings).
+- Nhảy: nút "Jump" (mặc định `Space`).
+- Double-jump: `Space` 2 lần.
+- Chạy: giữ `Left Shift`.
 - Dash: hiện đang dùng phím `W` (có thể đổi trong code sang phím khác).
-- Tấn công: Fire1 (mặc định chuột trái). 
-- Debug: nhấn K để nhận 10 sát thương (theo code PlayerController).
+- Tấn công: Fire1 (mặc định `chuột trái`). 
+- Debug: nhấn `K` để nhận 10 sát thương (theo code PlayerController).
 
 ## Cấu trúc dự án (tóm tắt)
 
