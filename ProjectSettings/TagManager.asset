@@ -47,12 +47,9 @@ TagManager:
   - name: BBBGround
     uniqueID: 1325431439
     locked: 0
-<<<<<<< HEAD
-=======
   - name: 4BGround
     uniqueID: 3616125933
     locked: 0
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
   - name: BackBackGround
     uniqueID: 3733210117
     locked: 0
@@ -74,14 +71,11 @@ TagManager:
   - name: Character
     uniqueID: 3374470797
     locked: 0
-<<<<<<< HEAD
   - name: UI_Above_All
     uniqueID: 261662785
     locked: 0
   - name: UI_Front
     uniqueID: 3999810713
     locked: 0
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
   m_RenderingLayers:
   - Default

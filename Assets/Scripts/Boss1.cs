@@ -175,7 +175,7 @@ public class BossController : MonoBehaviour
             var playerController = player.GetComponent<PlayerController>();
             if (playerController != null)
             {
-                // playerController.TakeDamage(attackDamage);
+                playerController.TakeDamage(attackDamage);
             }
         }
     }

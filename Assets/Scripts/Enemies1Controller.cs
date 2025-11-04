@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // ... (Các biến Stats, Health, Animation Timings giữ nguyên) ...
     [Header("Stats")]
     public float moveSpeed = 2f;
     public float attackRange = 1.5f;
@@ -11,15 +10,13 @@ public class EnemyController : MonoBehaviour
     public float detectRange = 6f;
     public float attackDamage = 10f;
 
-    // ⚔️ HEALTH & SÁT THƯƠNG TỪ PLAYER
     [Header("Health")]
     [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
     [SerializeField] private float playerPunchDamage = 2f;
     [Tooltip("Số lần Player phải đấm để Enemy chết. (Cần là 2)")]
-    [SerializeField] private int requiredPunchesToKill = 2; // Yêu cầu 2 đấm
+    [SerializeField] private int requiredPunchesToKill = 2;
     private float maxHealth;
     private float currentHealth;
-    // ---------------------------------------------
 
     [Header("Animation Timings")]
     public float attackAnimationDuration = 1.0f;
@@ -28,7 +25,6 @@ public class EnemyController : MonoBehaviour
     [Header("References")]
     public LayerMask playerLayer;
 
-<<<<<<< HEAD
     [Header("Audio")]
     public AudioClip idleSound;
     public AudioClip walkSound;
@@ -37,19 +33,13 @@ public class EnemyController : MonoBehaviour
     public AudioClip deathSound;
     private AudioSource audioSource;
 
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     private Transform player;
     private Animator animator;
     private Rigidbody2D rb;
 
     private bool isDead = false;
     private bool isAttacking = false;
-<<<<<<< HEAD
-    // Guard so we only apply damage/sound once per attack animation
     private bool hasAppliedDamageThisAttack = false;
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     private bool isFacingRight = true;
     private float lastAttackTime = 0f;
 
@@ -58,22 +48,19 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-<<<<<<< HEAD
         audioSource = GetComponent<AudioSource>();
+
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.playOnAwake = false;
         }
-        // Ensure 2D playback by default and sensible volume
+
         audioSource.spatialBlend = 0f;
         audioSource.volume = Mathf.Clamp01(audioSource.volume <= 0f ? 0.8f : audioSource.volume);
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
 
         lastAttackTime = Time.time;
 
-        // 🔪 KHỞI TẠO MÁU: Máu = 2 * 2 = 4f
         maxHealth = requiredPunchesToKill * playerPunchDamage;
         currentHealth = maxHealth;
     }
@@ -94,10 +81,7 @@ public class EnemyController : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
             FlipTowardsPlayer();
-<<<<<<< HEAD
-=======
 
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
             if (Time.time - lastAttackTime >= attackCooldown)
             {
                 StartCoroutine(Attack());
@@ -110,11 +94,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
-<<<<<<< HEAD
-            // Player far -> stop any looped audio
             StopLoopSound();
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         }
     }
 
@@ -127,15 +107,11 @@ public class EnemyController : MonoBehaviour
 
         if (direction.x > 0 && !isFacingRight) Flip();
         else if (direction.x < 0 && isFacingRight) Flip();
-<<<<<<< HEAD
 
-        // Play walk loop
         if (walkSound != null && audioSource != null)
         {
             PlayLoopSound(walkSound);
         }
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     }
 
     private void FlipTowardsPlayer()
@@ -147,40 +123,26 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Attack()
     {
-<<<<<<< HEAD
-        // reset per-attack guard
         hasAppliedDamageThisAttack = false;
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         isAttacking = true;
         animator.SetTrigger("isAttacking");
         rb.linearVelocity = Vector2.zero;
 
-<<<<<<< HEAD
-        // Wait until the damage frame, play attack one-shot there
-        // Wait until the damage frame. The actual attack sound is played when damage is applied
-        // in ApplyDamageToPlayer to ensure it lines up exactly with the hit event.
+        // ⏱️ Chờ tới khung animation vung tay
         yield return new WaitForSeconds(damageFrameTime);
 
-        // Fallback: if the animation event or other system didn't call ApplyDamageToPlayer
-        // (so we haven't applied damage/sound yet), play the attack sound here so the
-        // player still hears feedback on the first hit.
-        if (!hasAppliedDamageThisAttack)
+        // ⚔️ Gây damage cho player tại đúng thời điểm
+        ApplyDamageToPlayer();
+
+        // 🎧 Phát âm thanh tấn công
+        if (attackSound != null && audioSource != null)
         {
-            if (attackSound != null && audioSource != null)
-            {
-                audioSource.PlayOneShot(attackSound);
-                Debug.Log(gameObject.name + " played fallback attack sound (Attack coroutine): " + attackSound.name);
-            }
-            // mark applied so we don't double-apply
-            hasAppliedDamageThisAttack = true;
+            audioSource.PlayOneShot(attackSound);
+            Debug.Log(gameObject.name + " played attack sound (Attack coroutine): " + attackSound.name);
         }
 
-        // Wait the remainder of the attack animation
+        // Chờ cho tới hết animation
         yield return new WaitForSeconds(attackAnimationDuration - damageFrameTime);
-=======
-        yield return new WaitForSeconds(attackAnimationDuration);
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
 
         isAttacking = false;
         lastAttackTime = Time.time;
@@ -193,31 +155,17 @@ public class EnemyController : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.position);
         if (distance > attackRange) return;
 
-        float directionToPlayer = player.position.x - transform.position.x;
-        bool isPlayerInFront = (directionToPlayer > 0 && isFacingRight) ||
-                               (directionToPlayer < 0 && !isFacingRight);
+        bool isPlayerInFront = (player.position.x - transform.position.x > 0 && isFacingRight)
+                            || (player.position.x - transform.position.x < 0 && !isFacingRight);
 
         if (isPlayerInFront)
         {
             var playerController = player.GetComponent<PlayerController>();
-            if (playerController != null)
+            if (playerController != null && !hasAppliedDamageThisAttack)
             {
-<<<<<<< HEAD
-                // Only apply damage once per attack animation/sequence
-                if (!hasAppliedDamageThisAttack)
-                {
-                    playerController.TakeDamage(attackDamage);
-                    hasAppliedDamageThisAttack = true;
-                    // Play attack sound exactly at the moment damage is applied so it lines up
-                    if (attackSound != null && audioSource != null)
-                    {
-                        audioSource.PlayOneShot(attackSound);
-                        Debug.Log(gameObject.name + " played attack sound (ApplyDamageToPlayer): " + attackSound.name);
-                    }
-                }
-=======
                 playerController.TakeDamage(attackDamage);
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
+                hasAppliedDamageThisAttack = true;
+                Debug.Log($"{gameObject.name} gây {attackDamage} damage lên Player!");
             }
         }
     }
@@ -232,16 +180,11 @@ public class EnemyController : MonoBehaviour
         currentHealth -= dmg;
         Debug.Log(gameObject.name + " bị nhận " + dmg + " sát thương. Máu còn: " + currentHealth);
 
-<<<<<<< HEAD
-        // Play hurt sound if assigned
         if (hurtSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(hurtSound);
-            Debug.Log(gameObject.name + " played hurt sound: " + hurtSound.name);
         }
 
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
         if (currentHealth <= 0)
         {
             Die();
@@ -257,33 +200,23 @@ public class EnemyController : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        // 1. Kích hoạt hoạt ảnh
         animator.SetTrigger("isDeath");
 
-<<<<<<< HEAD
-        // Stop looped audio and play death one-shot
         if (audioSource != null)
         {
             if (audioSource.isPlaying) audioSource.Stop();
             if (deathSound != null) audioSource.PlayOneShot(deathSound);
         }
 
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
-        // 2. Dừng vật lý ngay lập tức!
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
-            // 🔑 QUAN TRỌNG: Tắt Simulation để vô hiệu hóa trọng lực!
             rb.simulated = false;
         }
 
-        // 3. Tắt Collider và script
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 
-        // 4. 🚀 ĐÃ SỬA: Tăng thời gian chờ hủy để khớp với hoạt ảnh (ví dụ 2 giây)
-        // Nếu hoạt ảnh chết của bạn dài hơn 2 giây, bạn cần tăng giá trị này.
         Destroy(gameObject, 2f);
     }
 
@@ -295,8 +228,6 @@ public class EnemyController : MonoBehaviour
         transform.localScale = scale;
     }
 
-<<<<<<< HEAD
-    // --- Audio helpers -------------------------------------------------
     private void PlayLoopSound(AudioClip clip)
     {
         if (audioSource == null || clip == null) return;
@@ -304,7 +235,6 @@ public class EnemyController : MonoBehaviour
         audioSource.clip = clip;
         audioSource.loop = true;
         audioSource.Play();
-        Debug.Log(gameObject.name + " playing loop sound: " + clip.name);
     }
 
     private void StopLoopSound()
@@ -313,69 +243,11 @@ public class EnemyController : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
-            Debug.Log(gameObject.name + " stopped loop sound");
         }
         audioSource.loop = false;
         audioSource.clip = null;
     }
 
-    [ContextMenu("Test Play Idle Sound")]
-    private void TestPlayIdle()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (idleSound != null && audioSource != null)
-        {
-            PlayLoopSound(idleSound);
-        }
-        else Debug.LogWarning("Idle sound or AudioSource missing on " + gameObject.name);
-    }
-
-    [ContextMenu("Test Play Walk Sound")]
-    private void TestPlayWalk()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (walkSound != null && audioSource != null)
-        {
-            PlayLoopSound(walkSound);
-        }
-        else Debug.LogWarning("Walk sound or AudioSource missing on " + gameObject.name);
-    }
-
-    [ContextMenu("Test Play Death Sound")]
-    private void TestPlayDeath()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (deathSound != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(deathSound);
-        }
-        else Debug.LogWarning("Death sound or AudioSource missing on " + gameObject.name);
-    }
-
-    [ContextMenu("Test Play Hurt Sound")]
-    private void TestPlayHurt()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (hurtSound != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(hurtSound);
-        }
-        else Debug.LogWarning("Hurt sound or AudioSource missing on " + gameObject.name);
-    }
-
-    [ContextMenu("Test Play Attack Sound")]
-    private void TestPlayAttack()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (attackSound != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(attackSound);
-        }
-        else Debug.LogWarning("Attack sound or AudioSource missing on " + gameObject.name);
-    }
-
-=======
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

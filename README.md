@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# The-Blight-Eradicator
-The world is threatened by the "Rust Blight", a disease that turns animals and humans into ferocious metal monsters. The disease broke out in the Ironwood Forest.
-=======
 # Diệt Mầm Bệnh (The Blight Eradicator)
 
 Diệt Mầm Bệnh là một trò chơi hành động-platformer 2D nơi người chơi vào vai Kael — một thợ săn quái vật đơn độc — nhiệm vụ là thâm nhập vào Khu Rừng Thép (Ironwood Forest) và tiêu diệt nguồn gốc của "Bệnh Dịch Rỉ Sét" (Rust Blight).
@@ -67,4 +63,3 @@ Khi Kael tiến sâu vào Lõi Rừng Thép, anh phải đối mặt với các 
 ## Nhóm phát triển
 
 Dự án này được phát triển bởi một nhóm sinh viên từ Đại học FPT (FPT University) trong khuôn khổ khóa học/đồ án. Nhóm chịu trách nhiệm về thiết kế gameplay, lập trình, và tích hợp tài sản.
->>>>>>> ec19981d9ab3e62b25d6ac46b5a551d4c4d487cc
