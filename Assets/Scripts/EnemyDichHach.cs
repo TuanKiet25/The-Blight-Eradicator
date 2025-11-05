@@ -19,8 +19,12 @@ public class EnemyDichHach : MonoBehaviour
     private float currentHealth;
 
     [Header("Animation Timings")]
+    [Tooltip("Thời gian chặn Enemy di chuyển trong khi Attack 1")]
     public float attackAnimationDuration = 1.0f;
-    public float damageFrameTime = 0.3f;
+    [Tooltip("Thời gian chặn Enemy di chuyển trong khi Attack 2")]
+    public float attack2AnimationDuration = 1.2f; // Ví dụ: Attack 2 lâu hơn
+    
+    // public float damageFrameTime = 0.3f; // Giữ lại nếu dùng Animation Event
 
     [Header("References")]
     public LayerMask playerLayer;
@@ -42,7 +46,7 @@ public class EnemyDichHach : MonoBehaviour
 
         lastAttackTime = Time.time;
 
-        // KHỞI TẠO MÁU: Máu = 5 * 2 = 10f
+        // KHỞI TẠO MÁU
         maxHealth = requiredPunchesToKill * playerPunchDamage;
         currentHealth = maxHealth;
 
@@ -60,7 +64,7 @@ public class EnemyDichHach : MonoBehaviour
         
         if (isAttacking)
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero; // Luôn đóng băng khi tấn công
             return;
         }
 
@@ -75,7 +79,8 @@ public class EnemyDichHach : MonoBehaviour
 
             if (Time.time - lastAttackTime >= attackCooldown)
             {
-                StartCoroutine(Attack());
+                // Gọi hàm tấn công ngẫu nhiên
+                StartCoroutine(RandomAttack()); 
             }
         }
         // === DETECT RANGE (CHASE) ===
@@ -89,6 +94,39 @@ public class EnemyDichHach : MonoBehaviour
             animator.SetBool("isWalking", false);
             rb.linearVelocity = Vector2.zero;
         }
+    }
+
+    // ============================================
+    // RANDOM ATTACK - Chọn ngẫu nhiên Attack 1 hoặc Attack 2
+    // ============================================
+    private IEnumerator RandomAttack()
+    {
+        isAttacking = true;
+        rb.linearVelocity = Vector2.zero;
+
+        // 🔑 LOGIC CHỌN NGẪU NHIÊN: 0 hoặc 1
+        int attackChoice = Random.Range(0, 2); 
+        float duration;
+
+        if (attackChoice == 0)
+        {
+            animator.SetTrigger("TgAttack");
+            duration = attackAnimationDuration;
+            Debug.Log("⚔️ Bắt đầu Attack 1 (TgAttack)");
+        }
+        else
+        {
+            animator.SetTrigger("TgAttack2");
+            duration = attack2AnimationDuration;
+            Debug.Log("⚔️ Bắt đầu Attack 2 (TgAttack2)");
+        }
+        
+        // Chờ hết thời gian hoạt ảnh (hoặc đợi Animation Event gọi ApplyDamageToPlayer)
+        // Lưu ý: Nếu dùng Animation Event để gây damage, bạn vẫn cần Coroutine này để chặn isAttacking
+        yield return new WaitForSeconds(duration); 
+
+        isAttacking = false;
+        lastAttackTime = Time.time;
     }
 
     // ============================================
@@ -116,29 +154,14 @@ public class EnemyDichHach : MonoBehaviour
     }
 
     // ============================================
-    // ATTACK - Tấn công player
-    // ============================================
-    private IEnumerator Attack()
-    {
-        isAttacking = true;
-        animator.SetTrigger("isAttacking");
-        rb.linearVelocity = Vector2.zero;
-
-        yield return new WaitForSeconds(attackAnimationDuration);
-
-        isAttacking = false;
-        lastAttackTime = Time.time;
-    }
-
-    // ============================================
-    // APPLY DAMAGE TO PLAYER - Gây damage (gọi từ Animation Event)
+    // APPLY DAMAGE TO PLAYER - Gây damage (NÊN gọi từ Animation Event)
     // ============================================
     public void ApplyDamageToPlayer()
     {
         if (player == null || isDead || !isAttacking) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
-        if (distance > attackRange) return;
+        if (distance > attackRange + 0.1f) return; // Thêm tolerance nhỏ
 
         // Check player có ở phía trước không
         float directionToPlayer = player.position.x - transform.position.x;
@@ -152,6 +175,7 @@ public class EnemyDichHach : MonoBehaviour
             {
                 playerController.TakeDamage(attackDamage);
                 Debug.Log($"⚔️ {gameObject.name} tấn công Player! Damage: {attackDamage}");
+                // 
             }
         }
     }
@@ -163,6 +187,7 @@ public class EnemyDichHach : MonoBehaviour
     {
         if (isDead) return;
 
+        // Dừng tấn công và di chuyển khi bị đánh
         isAttacking = false;
         if (rb != null) rb.linearVelocity = Vector2.zero;
 
@@ -175,7 +200,8 @@ public class EnemyDichHach : MonoBehaviour
         }
         else
         {
-            animator.SetTrigger("isHurt");
+            // Sử dụng Trigger isHurt
+            animator.SetTrigger("isHurt"); 
         }
     }
 
@@ -194,7 +220,6 @@ public class EnemyDichHach : MonoBehaviour
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
-            // QUAN TRỌNG: Tắt Simulation để vô hiệu hóa trọng lực
             rb.simulated = false;
         }
 
