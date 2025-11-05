@@ -9,6 +9,9 @@ public class EnemyThanChet : MonoBehaviour
     public float attackCooldown = 1.5f;
     public float detectRange = 6f;
     public float attackDamage = 15f;
+    
+    [Header("References")]
+    public BossHealthBar healthBar; // Giữ nguyên, giả định có.
 
     [Header("Health")]
     [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
@@ -19,11 +22,18 @@ public class EnemyThanChet : MonoBehaviour
     private float currentHealth;
 
     [Header("Animation Timings")]
+    [Tooltip("Thời gian chặn Enemy di chuyển trong khi Attack")]
     public float attackAnimationDuration = 1.0f;
-    public float damageFrameTime = 0.3f;
-
+    
     [Header("References")]
     public LayerMask playerLayer;
+
+    // 🔊 AUDIO DECLARATIONS
+    [Header("Audio")]
+    public AudioClip idleSound;
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+    private AudioSource audioSource; // Thêm private AudioSource
 
     private Transform player;
     private Animator animator;
@@ -40,9 +50,17 @@ public class EnemyThanChet : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
+        // 🔊 SETUP AUDIO SOURCE
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+
         lastAttackTime = Time.time;
 
-        // KHỞI TẠO MÁU: Máu = 5 * 2 = 10f
+        // KHỞI TẠO MÁU
         maxHealth = requiredPunchesToKill * playerPunchDamage;
         currentHealth = maxHealth;
 
@@ -50,9 +68,39 @@ public class EnemyThanChet : MonoBehaviour
         {
             Debug.LogWarning("⚠️ Không tìm thấy Player! Hãy set Tag = 'Player' cho player GameObject");
         }
+        
+        // 🔊 BẮT ĐẦU IDLE SOUND (Áp dụng cho cả Idle và Walking)
+        StartIdleSound();
 
         Debug.Log($"✅ Enemy {gameObject.name} đã khởi tạo! HP: {currentHealth}/{maxHealth}");
     }
+
+    // ================== AUDIO HELPERS ==================
+
+    // Bật Idle Sound (Loop)
+    private void StartIdleSound()
+    {
+        if (idleSound != null && audioSource != null)
+        {
+            if (audioSource.clip != idleSound || !audioSource.isPlaying)
+            {
+                audioSource.clip = idleSound;
+                audioSource.loop = true;
+                audioSource.Play();
+            }
+        }
+    }
+    
+    // Dừng âm thanh Loop (Idle)
+    private void StopLoopingSound()
+    {
+         if (audioSource != null && audioSource.isPlaying && audioSource.loop)
+         {
+             audioSource.Stop();
+         }
+    }
+
+    // ============================================
 
     void Update()
     {
@@ -70,7 +118,9 @@ public class EnemyThanChet : MonoBehaviour
         if (distance <= attackRange)
         {
             rb.linearVelocity = Vector2.zero;
-            animator.SetBool("isWalking", false);
+            // 🔊 Giữ Idle/Walking Sound bằng StartIdleSound()
+            animator.SetBool("isWalking", false); 
+            StartIdleSound(); 
             FlipTowardsPlayer();
 
             if (Time.time - lastAttackTime >= attackCooldown)
@@ -86,8 +136,10 @@ public class EnemyThanChet : MonoBehaviour
         // === OUT OF RANGE ===
         else
         {
-            animator.SetBool("isWalking", false);
             rb.linearVelocity = Vector2.zero;
+            // 🔊 Giữ Idle/Walking Sound
+            animator.SetBool("isWalking", false);
+            StartIdleSound(); 
         }
     }
 
@@ -97,6 +149,7 @@ public class EnemyThanChet : MonoBehaviour
     private void MoveTowardsPlayer()
     {
         animator.SetBool("isWalking", true);
+        StartIdleSound(); // 🔊 Đảm bảo âm thanh vẫn chạy khi di chuyển
 
         Vector2 direction = (player.position - transform.position).normalized;
         rb.linearVelocity = new Vector2(direction.x * moveSpeed, rb.linearVelocity.y);
@@ -106,6 +159,91 @@ public class EnemyThanChet : MonoBehaviour
     }
 
     // ============================================
+    // ATTACK - Tấn công player
+    // ============================================
+    private IEnumerator Attack()
+    {
+        isAttacking = true;
+        
+        animator.SetTrigger("TgAttack");
+        
+        rb.linearVelocity = Vector2.zero;
+        
+        // 🔊 PHÁT ÂM THANH TẤN CÔNG (Dừng loop, phát OneShot)
+        StopLoopingSound();
+        if (attackSound != null) audioSource.PlayOneShot(attackSound);
+        
+        yield return new WaitForSeconds(attackAnimationDuration);
+
+        isAttacking = false;
+        lastAttackTime = Time.time;
+        
+        // Bắt đầu lại Idle Sound sau khi tấn công xong
+        StartIdleSound(); 
+    }
+
+    // ============================================
+    // TAKE DAMAGE - Nhận sát thương
+    // ============================================
+    public void TakeDamage(float dmg)
+    {
+        if (isDead) return;
+
+        isAttacking = false;
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+        
+        // 🔊 KHÔNG CÓ HURTSOUND trong khai báo, nhưng nếu có thì code là:
+        // if (hurtSound != null) audioSource.PlayOneShot(hurtSound);
+
+        currentHealth -= dmg;
+        Debug.Log($"💥 {gameObject.name} bị nhận {dmg} sát thương. Máu còn: {currentHealth}/{maxHealth}");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else
+        {
+            // 🔑 LỖI CODE GỐC: Trigger "isHurt" không tồn tại. Đã xóa.
+            // Giữ nguyên logic visual nếu cần: animator.SetTrigger("isHurt"); 
+        }
+        
+        // Bắt đầu lại Idle Sound
+        StartIdleSound();
+    }
+
+    // ============================================
+    // DIE - Chết
+    // ============================================
+    public void Die()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        animator.SetTrigger("TgDeath"); 
+        
+        // 🔊 PHÁT ÂM THANH CHẾT
+        StopLoopingSound();
+        if (deathSound != null) audioSource.PlayOneShot(deathSound);
+
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false;
+        }
+
+        Collider2D col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+
+        Debug.Log($"💀 {gameObject.name} đã chết!");
+
+        Destroy(gameObject, 2f);
+
+        this.enabled = false;
+    }
+    
+    // ... (Giữ nguyên các hàm khác) ...
+    // ============================================
     // FLIP TOWARDS PLAYER - Quay về phía player
     // ============================================
     private void FlipTowardsPlayer()
@@ -114,33 +252,15 @@ public class EnemyThanChet : MonoBehaviour
         if (directionX > 0 && !isFacingRight) Flip();
         else if (directionX < 0 && isFacingRight) Flip();
     }
-
-    // ============================================
-    // ATTACK - Tấn công player
-    // ============================================
-    private IEnumerator Attack()
-    {
-        isAttacking = true;
-        animator.SetTrigger("isAttacking");
-        rb.linearVelocity = Vector2.zero;
-
-        yield return new WaitForSeconds(attackAnimationDuration);
-
-        isAttacking = false;
-        lastAttackTime = Time.time;
-    }
-
-    // ============================================
-    // APPLY DAMAGE TO PLAYER - Gây damage (gọi từ Animation Event)
-    // ============================================
+    
+    // ... (Giữ nguyên ApplyDamageToPlayer, Flip, Gizmos) ...
     public void ApplyDamageToPlayer()
     {
         if (player == null || isDead || !isAttacking) return;
-
+        
         float distance = Vector2.Distance(transform.position, player.position);
         if (distance > attackRange) return;
 
-        // Check player có ở phía trước không
         float directionToPlayer = player.position.x - transform.position.x;
         bool isPlayerInFront = (directionToPlayer > 0 && isFacingRight) ||
                                (directionToPlayer < 0 && !isFacingRight);
@@ -155,68 +275,7 @@ public class EnemyThanChet : MonoBehaviour
             }
         }
     }
-
-    // ============================================
-    // TAKE DAMAGE - Nhận sát thương
-    // ============================================
-    public void TakeDamage(float dmg)
-    {
-        if (isDead) return;
-
-        isAttacking = false;
-        if (rb != null) rb.linearVelocity = Vector2.zero;
-
-        currentHealth -= dmg;
-        Debug.Log($"💥 {gameObject.name} bị nhận {dmg} sát thương. Máu còn: {currentHealth}/{maxHealth}");
-
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            animator.SetTrigger("isHurt");
-        }
-    }
-
-    // ============================================
-    // DIE - Chết
-    // ============================================
-    public void Die()
-    {
-        if (isDead) return;
-        isDead = true;
-
-        // 1. Kích hoạt animation chết
-        animator.SetTrigger("isDeath");
-
-        // 2. Dừng vật lý ngay lập tức
-        if (rb != null)
-        {
-            rb.linearVelocity = Vector2.zero;
-            // QUAN TRỌNG: Tắt Simulation để vô hiệu hóa trọng lực
-            rb.simulated = false;
-        }
-
-        // 3. Tắt Collider và script
-        Collider2D col = GetComponent<Collider2D>();
-        if (col != null)
-        {
-            col.enabled = false;
-        }
-
-        Debug.Log($"💀 {gameObject.name} đã chết!");
-
-        // 4. Hủy đối tượng sau 2 giây (khớp với animation)
-        Destroy(gameObject, 2f);
-
-        // 5. Tắt script (đặt cuối cùng)
-        this.enabled = false;
-    }
-
-    // ============================================
-    // FLIP - Lật sprite
-    // ============================================
+    
     private void Flip()
     {
         isFacingRight = !isFacingRight;
@@ -224,10 +283,7 @@ public class EnemyThanChet : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
-
-    // ============================================
-    // GIZMOS - Vẽ phạm vi
-    // ============================================
+    
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
