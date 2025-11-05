@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1217730619595123251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.23, y: 0.26, z: 0}
+  m_LocalPosition: {x: 0.03126, y: -0.13892, z: 0}
   m_LocalScale: {x: 3.8300762, y: 3.8300762, z: 3.8300762}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayerID: -920496499
   m_SortingLayer: 10
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4549297002301125287, guid: bea8f45e648078d48b90d46e815fe963, type: 3}
+  m_Sprite: {fileID: -4549297002301125287, guid: e2097ac229c30774485a4f1339967b54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -91,7 +91,7 @@ SpriteRenderer:
   m_Size: {x: 0.41, y: 0.5402919}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1289368394729011132
@@ -201,6 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 979ddfa377972444caf4ce81273795e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  idleSound: {fileID: 0}
+  summonSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
   moveSpeed: 2
   chargeSpeed: 6
   chargeDelay: 1.2
