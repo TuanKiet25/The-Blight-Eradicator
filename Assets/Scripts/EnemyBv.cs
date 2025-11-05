@@ -21,6 +21,13 @@ public class RangedEnemyController : MonoBehaviour
     private float maxHealth;
     private float currentHealth;
 
+    // --- SOUNDS ---
+    [Header("Sound")]
+    [SerializeField] private AudioClip shootSound; // Âm thanh khi bắn
+    [SerializeField] private AudioClip hurtSound;  // Âm thanh khi bị đánh
+    [SerializeField] private AudioClip deathSound; // Âm thanh khi chết
+    private AudioSource audioSource;               // Component phát âm thanh
+
     // --- ANIMATION & REFERENCES ---
     [Header("Animation Timings")]
     public float attackAnimationDuration = 1.0f;
@@ -44,6 +51,15 @@ public class RangedEnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+
+        // 🔥 Lấy hoặc thêm AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false; // Không phát khi Start
+            // Tùy chỉnh Volume nếu cần (ví dụ: audioSource.volume = 0.7f;)
+        }
 
         lastAttackTime = Time.time;
         maxHealth = requiredPunchesToKill * playerPunchDamage;
@@ -131,34 +147,49 @@ public class RangedEnemyController : MonoBehaviour
     // 🔥 HÀM GÂY SÁT THƯƠNG TẦM XA (Được gọi từ Animation Event)
     public void ApplyDamageToPlayer()
     {
-        // Sử dụng firePoint.position cho điểm xuất phát của Raycast
-        if (player == null || isDead || !isAttacking || firePoint == null) return;
+        // 1. Phát âm thanh bắn
+        if (shootSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
 
-        // 1. Xác định hướng nhìn
+        // Sử dụng firePoint.position cho điểm xuất phát của Raycast
+        if (player == null || isDead || firePoint == null) return;
+
+        // 2. Xác định hướng nhìn
         Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
 
-        // 2. Thực hiện Raycast (Kiểm tra tia)
+        // 3. Thực hiện Raycast (Kiểm tra tia)
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, attackRange, playerLayer);
 
-        // 3. Xử lý kết quả Raycast
+        // 4. Xử lý kết quả Raycast
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Player"))
             {
+                // Giả định bạn có script PlayerController với hàm TakeDamage
                 var playerController = hit.collider.GetComponent<PlayerController>();
                 if (playerController != null)
                 {
                     // Gây sát thương TẦM XA trực tiếp (Tức thì)
-                    playerController.TakeDamage(attackDamage);
+                    // Lưu ý: PlayerController cần được định nghĩa trong project của bạn
+                    playerController.TakeDamage(attackDamage); 
+                    Debug.Log("Enemy bắn trúng Player gây " + attackDamage + " sát thương!");
                 }
             }
         }
     }
 
-    // --- HÀM BỊ THƯƠNG & CHẾT (Giữ nguyên) ---
+    // --- HÀM BỊ THƯƠNG & CHẾT ---
     public void TakeDamage(float dmg)
     {
         if (isDead) return;
+
+        // 1. Phát âm thanh Bị thương
+        if (hurtSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hurtSound);
+        }
 
         isAttacking = false;
         if (rb != null) rb.linearVelocity = Vector2.zero;
@@ -168,14 +199,8 @@ public class RangedEnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
-        }
-        if (currentHealth <= 0)
-        {
-            // 🔑 BẮT BUỘC: Vô hiệu hóa Collider trước khi gọi Die()
-            // Điều này ngăn Player (hoặc một vật thể khác) gây sát thương thêm.
+            // Vô hiệu hóa Collider trước khi gọi Die()
             GetComponent<Collider2D>().enabled = false;
-
             Die();
         }
         else
@@ -189,6 +214,12 @@ public class RangedEnemyController : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        // 2. Phát âm thanh Chết
+        if (deathSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(deathSound);
+        }
+
         StopAllCoroutines();
         animator.SetTrigger("isDeath");
 
@@ -200,6 +231,8 @@ public class RangedEnemyController : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
+
+        // Hủy đối tượng sau 2 giây (cho phép hoạt ảnh và âm thanh chết chạy xong)
         Destroy(gameObject, 2f);
     }
 

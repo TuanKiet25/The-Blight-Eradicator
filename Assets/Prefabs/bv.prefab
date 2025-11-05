@@ -113,7 +113,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -920496499
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 8793639957104055765, guid: 1afa3c2edf4fc6646b7de32ae2f45567, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -168,6 +168,9 @@ MonoBehaviour:
   attackDamage: 30
   playerPunchDamage: 2
   requiredPunchesToKill: 3
+  shootSound: {fileID: 8300000, guid: ecc25280532427f4d9820d483c9309dd, type: 3}
+  hurtSound: {fileID: 8300000, guid: 0c945c80a7b4be64cbed85b95998f40c, type: 3}
+  deathSound: {fileID: 8300000, guid: d4de509be197b134e854f56da3b3d7ab, type: 3}
   attackAnimationDuration: 1
   playerLayer:
     serializedVersion: 2
