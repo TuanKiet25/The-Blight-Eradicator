@@ -72,6 +72,9 @@ public class PlayerController : MonoBehaviour
     [Header("Respawn")] 
     [SerializeField] private Transform spawnPoint;
 
+    [Header("GameOver")]
+    [SerializeField] private GameObject GameOver;
+
     private Animator animator;
     private bool isGrounded;
     private Rigidbody2D rb;
@@ -114,7 +117,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (isDead) return;
+        if (isDead)
+            return;
 
         if (isDashing || isAttacking) return;
 
@@ -352,6 +356,13 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.simulated = false;
         GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+
+        if (GameOver != null)
+        {
+            GameOver.SetActive(true);
+        }
+
         this.enabled = false;
     }
 

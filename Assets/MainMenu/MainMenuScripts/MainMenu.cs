@@ -47,6 +47,7 @@ public class MainMenu : MonoBehaviour
     {
         // Tải scene đã được lưu
         string sceneToLoad = PlayerPrefs.GetString(SaveKey);
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneToLoad);
     }
 
