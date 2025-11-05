@@ -17,6 +17,7 @@ AnimationClip:
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
+<<<<<<< Updated upstream:Assets/Sprites/Enemies/ThanDichBenh/ThanDichBenh_Hurt.anim
   m_PPtrCurves:
   - serializedVersion: 2
     curve:
@@ -31,12 +32,16 @@ AnimationClip:
     classID: 212
     script: {fileID: 0}
     flags: 2
+=======
+  m_PPtrCurves: []
+>>>>>>> Stashed changes:Assets/Animations/ThanChet/ThanChet_Summon.anim
   m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   m_ClipBindingConstant:
+<<<<<<< Updated upstream:Assets/Sprites/Enemies/ThanDichBenh/ThanDichBenh_Hurt.anim
     genericBindings:
     - serializedVersion: 2
       path: 0
@@ -51,12 +56,20 @@ AnimationClip:
     - {fileID: -9029254278262725590, guid: bea8f45e648078d48b90d46e815fe963, type: 3}
     - {fileID: -2179209886628262462, guid: bea8f45e648078d48b90d46e815fe963, type: 3}
     - {fileID: -4837754662325245234, guid: bea8f45e648078d48b90d46e815fe963, type: 3}
+=======
+    genericBindings: []
+    pptrCurveMapping: []
+>>>>>>> Stashed changes:Assets/Animations/ThanChet/ThanChet_Summon.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< Updated upstream:Assets/Sprites/Enemies/ThanDichBenh/ThanDichBenh_Hurt.anim
     m_StopTime: 0.38333336
+=======
+    m_StopTime: 1
+>>>>>>> Stashed changes:Assets/Animations/ThanChet/ThanChet_Summon.anim
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

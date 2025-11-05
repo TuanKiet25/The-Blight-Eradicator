@@ -21,9 +21,23 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+<<<<<<< Updated upstream:Assets/Sprites/Enemies/Dai/Dai_Idle.anim
       value: {fileID: 8793639957104055765, guid: a5f13294fe88b5247bf40b88e29b60d2, type: 3}
     - time: 0.15
       value: {fileID: 6084859605308855041, guid: a5f13294fe88b5247bf40b88e29b60d2, type: 3}
+=======
+      value: {fileID: -7751219071525288297, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - time: 0.05
+      value: {fileID: -2809228643774045280, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - time: 0.1
+      value: {fileID: 5098452441359303606, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - time: 0.16666667
+      value: {fileID: -7858148026998855073, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - time: 0.21666667
+      value: {fileID: -5451656731380038960, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - time: 0.26666668
+      value: {fileID: -1092727325466002275, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+>>>>>>> Stashed changes:Assets/Animations/ThuongHan/ThuongHan_Idle.anim
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,14 +60,27 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+<<<<<<< Updated upstream:Assets/Sprites/Enemies/Dai/Dai_Idle.anim
     - {fileID: 8793639957104055765, guid: a5f13294fe88b5247bf40b88e29b60d2, type: 3}
     - {fileID: 6084859605308855041, guid: a5f13294fe88b5247bf40b88e29b60d2, type: 3}
+=======
+    - {fileID: -7751219071525288297, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - {fileID: -2809228643774045280, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - {fileID: 5098452441359303606, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - {fileID: -7858148026998855073, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - {fileID: -5451656731380038960, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+    - {fileID: -1092727325466002275, guid: 192a6bb0acd27dd4682743e6ffda6862, type: 3}
+>>>>>>> Stashed changes:Assets/Animations/ThuongHan/ThuongHan_Idle.anim
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< Updated upstream:Assets/Sprites/Enemies/Dai/Dai_Idle.anim
     m_StopTime: 0.16666667
+=======
+    m_StopTime: 0.28333336
+>>>>>>> Stashed changes:Assets/Animations/ThuongHan/ThuongHan_Idle.anim
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
