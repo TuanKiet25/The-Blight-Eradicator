@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    // ... (Các biến Stats, Health, Animation Timings giữ nguyên) ...
     [Header("Stats")]
     public float moveSpeed = 2f;
     public float attackRange = 1.5f;
@@ -11,15 +10,13 @@ public class EnemyController : MonoBehaviour
     public float detectRange = 6f;
     public float attackDamage = 10f;
 
-    // ⚔️ HEALTH & SÁT THƯƠNG TỪ PLAYER
     [Header("Health")]
     [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
     [SerializeField] private float playerPunchDamage = 2f;
     [Tooltip("Số lần Player phải đấm để Enemy chết. (Cần là 2)")]
-    [SerializeField] private int requiredPunchesToKill = 2; // Yêu cầu 2 đấm
+    [SerializeField] private int requiredPunchesToKill = 2;
     private float maxHealth;
     private float currentHealth;
-    // ---------------------------------------------
 
     [Header("Animation Timings")]
     public float attackAnimationDuration = 1.0f;
@@ -28,12 +25,21 @@ public class EnemyController : MonoBehaviour
     [Header("References")]
     public LayerMask playerLayer;
 
+    [Header("Audio")]
+    public AudioClip idleSound;
+    public AudioClip walkSound;
+    public AudioClip hurtSound;
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+    private AudioSource audioSource;
+
     private Transform player;
     private Animator animator;
     private Rigidbody2D rb;
 
     private bool isDead = false;
     private bool isAttacking = false;
+    private bool hasAppliedDamageThisAttack = false;
     private bool isFacingRight = true;
     private float lastAttackTime = 0f;
 
@@ -42,10 +48,19 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        audioSource = GetComponent<AudioSource>();
+
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+        }
+
+        audioSource.spatialBlend = 0f;
+        audioSource.volume = Mathf.Clamp01(audioSource.volume <= 0f ? 0.8f : audioSource.volume);
 
         lastAttackTime = Time.time;
 
-        // 🔪 KHỞI TẠO MÁU: Máu = 2 * 2 = 4f
         maxHealth = requiredPunchesToKill * playerPunchDamage;
         currentHealth = maxHealth;
     }
@@ -79,6 +94,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             animator.SetBool("isWalking", false);
+            StopLoopSound();
         }
     }
 
@@ -91,6 +107,11 @@ public class EnemyController : MonoBehaviour
 
         if (direction.x > 0 && !isFacingRight) Flip();
         else if (direction.x < 0 && isFacingRight) Flip();
+
+        if (walkSound != null && audioSource != null)
+        {
+            PlayLoopSound(walkSound);
+        }
     }
 
     private void FlipTowardsPlayer()
@@ -102,11 +123,26 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator Attack()
     {
+        hasAppliedDamageThisAttack = false;
         isAttacking = true;
         animator.SetTrigger("isAttacking");
         rb.linearVelocity = Vector2.zero;
 
-        yield return new WaitForSeconds(attackAnimationDuration);
+        // ⏱️ Chờ tới khung animation vung tay
+        yield return new WaitForSeconds(damageFrameTime);
+
+        // ⚔️ Gây damage cho player tại đúng thời điểm
+        ApplyDamageToPlayer();
+
+        // 🎧 Phát âm thanh tấn công
+        if (attackSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(attackSound);
+            Debug.Log(gameObject.name + " played attack sound (Attack coroutine): " + attackSound.name);
+        }
+
+        // Chờ cho tới hết animation
+        yield return new WaitForSeconds(attackAnimationDuration - damageFrameTime);
 
         isAttacking = false;
         lastAttackTime = Time.time;
@@ -119,16 +155,17 @@ public class EnemyController : MonoBehaviour
         float distance = Vector2.Distance(transform.position, player.position);
         if (distance > attackRange) return;
 
-        float directionToPlayer = player.position.x - transform.position.x;
-        bool isPlayerInFront = (directionToPlayer > 0 && isFacingRight) ||
-                               (directionToPlayer < 0 && !isFacingRight);
+        bool isPlayerInFront = (player.position.x - transform.position.x > 0 && isFacingRight)
+                            || (player.position.x - transform.position.x < 0 && !isFacingRight);
 
         if (isPlayerInFront)
         {
             var playerController = player.GetComponent<PlayerController>();
-            if (playerController != null)
+            if (playerController != null && !hasAppliedDamageThisAttack)
             {
                 playerController.TakeDamage(attackDamage);
+                hasAppliedDamageThisAttack = true;
+                Debug.Log($"{gameObject.name} gây {attackDamage} damage lên Player!");
             }
         }
     }
@@ -142,6 +179,11 @@ public class EnemyController : MonoBehaviour
 
         currentHealth -= dmg;
         Debug.Log(gameObject.name + " bị nhận " + dmg + " sát thương. Máu còn: " + currentHealth);
+
+        if (hurtSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hurtSound);
+        }
 
         if (currentHealth <= 0)
         {
@@ -158,23 +200,23 @@ public class EnemyController : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        // 1. Kích hoạt hoạt ảnh
         animator.SetTrigger("isDeath");
 
-        // 2. Dừng vật lý ngay lập tức!
+        if (audioSource != null)
+        {
+            if (audioSource.isPlaying) audioSource.Stop();
+            if (deathSound != null) audioSource.PlayOneShot(deathSound);
+        }
+
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
-            // 🔑 QUAN TRỌNG: Tắt Simulation để vô hiệu hóa trọng lực!
             rb.simulated = false;
         }
 
-        // 3. Tắt Collider và script
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 
-        // 4. 🚀 ĐÃ SỬA: Tăng thời gian chờ hủy để khớp với hoạt ảnh (ví dụ 2 giây)
-        // Nếu hoạt ảnh chết của bạn dài hơn 2 giây, bạn cần tăng giá trị này.
         Destroy(gameObject, 2f);
     }
 
@@ -184,6 +226,26 @@ public class EnemyController : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private void PlayLoopSound(AudioClip clip)
+    {
+        if (audioSource == null || clip == null) return;
+        if (audioSource.isPlaying && audioSource.clip == clip) return;
+        audioSource.clip = clip;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
+
+    private void StopLoopSound()
+    {
+        if (audioSource == null) return;
+        if (audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+        audioSource.loop = false;
+        audioSource.clip = null;
     }
 
     private void OnDrawGizmosSelected()

@@ -16,9 +16,15 @@ EditorBuildSettings:
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/2.TheForest.unity
-    guid: 5e48a81e3cc43c54c976476bd075c19f
+    guid: 9e448b858f7d3ba4eb8f3e37374b0053
   - enabled: 1
     path: Assets/Scenes/3.InsideFactory.unity
+    guid: 3a6f58cfd2fe22549ae2d4fe6d6f2d2d
+  - enabled: 0
+    path: Assets/Scenes/2.TheDecayingFringe 1.unity
+    guid: 5e48a81e3cc43c54c976476bd075c19f
+  - enabled: 0
+    path: Assets/Scenes/3.TheDecayingFringe 2.unity
     guid: 529a1a2aa8ad43a41b245515515260b6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
