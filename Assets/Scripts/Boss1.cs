@@ -14,7 +14,7 @@ public class BossController : MonoBehaviour
     // 🔥 THÊM PHẠM VI PHÁT HIỆN BOSS
     [Tooltip("Phạm vi Boss bắt đầu đuổi theo Player.")]
     public float detectRange = 8f;
-
+    //
     [Header("Health")]
     public float maxHealth = 50f;
     private float currentHealth;
