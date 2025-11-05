@@ -281,6 +281,7 @@ public class PlayerController : MonoBehaviour
             currentLives--;
             if (currentLives <= 0)
             {
+                UpdateHealthUI();
                 HandleDie();
             }
             else
