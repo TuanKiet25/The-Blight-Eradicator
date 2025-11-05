@@ -48,6 +48,8 @@ public class PlayerController : MonoBehaviour
     [Header("Colliders")]
     [SerializeField] private Collider2D standingCollider;
     [SerializeField] private Collider2D deathCollider;
+    [Header("Respawn")] 
+    [SerializeField] private Transform spawnPoint;
 
     private Animator animator;
     private bool isGrounded;
@@ -56,7 +58,7 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private bool isDashing;
     private bool isAttacking = false;
-    private bool isDead = false;
+    public bool isDead = false;
     private int jumpCount;
 
     private void Awake()
@@ -304,5 +306,33 @@ public class PlayerController : MonoBehaviour
         // 3. Reset lại animation (quan trọng)
         animator.SetBool("isWalking", false);
         animator.SetBool("isRunning", false);
+    }
+    public void RespawnFromFall()
+    {
+        // Nếu nhân vật đã chết (hết mạng) thì không làm gì cả
+        if (isDead) return;
+
+        // 1. Mất một mạng
+        currentLives--;
+        UpdateHealthUI(); // Cập nhật lại UI trái tim
+
+        // 2. Kiểm tra xem đã hết mạng chưa
+        if (currentLives <= 0)
+        {
+            // Nếu hết mạng, gọi hàm chết thật
+            HandleDie();
+        }
+        else
+        {
+            // 3. Nếu còn mạng, hồi sinh
+            currentHealth = maxHealth;        // Hồi lại 100 HP
+            hpSlider.value = currentHealth; // Cập nhật lại thanh máu
+
+            // 4. Dịch chuyển nhân vật về Spawn Point
+            transform.position = spawnPoint.position;
+
+            // 5. Reset lại vật lý để nhân vật không bị trôi
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 }
