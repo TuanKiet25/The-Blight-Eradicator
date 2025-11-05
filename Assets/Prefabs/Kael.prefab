@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1868055478711428989}
   - component: {fileID: 4482712326874803043}
   - component: {fileID: 2154775653834685188}
+  - component: {fileID: -9160484726235928944}
   m_Layer: 0
   m_Name: Kael
   m_TagString: Player
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -920496499
-  m_SortingLayer: 4
+  m_SortingLayer: 10
   m_SortingOrder: 0
   m_Sprite: {fileID: 6474817916930609645, guid: f9a3eb4d2e17a41489072609efe41f69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -215,11 +216,12 @@ MonoBehaviour:
   dashDuration: 0.2
   standingCollider: {fileID: 6504108872057849351}
   deathCollider: {fileID: 2154775653834685188}
+  audioSource: {fileID: 0}
   jumpSound: {fileID: 8300000, guid: 61bc407bfee31ab478f44878004affdb, type: 3}
-  dashSound: {fileID: 8300000, guid: d5a6502f78099b94aab6402217708a27, type: 3}
+  dashSound: {fileID: 8300000, guid: daf96225d0605694f8ba5825c0b490bb, type: 3}
   punchSound: {fileID: 8300000, guid: 247f809f5cb812b488f049bcd4a34499, type: 3}
-  dieSound: {fileID: 8300000, guid: 3c6d73b590402bb449b362388cc32d33, type: 3}
   runSound: {fileID: 8300000, guid: 96a3fc06c87faba49b40464d33294967, type: 3}
+  dieSound: {fileID: 8300000, guid: 3c6d73b590402bb449b362388cc32d33, type: 3}
 --- !u!95 &4482712326874803043
 Animator:
   serializedVersion: 7
