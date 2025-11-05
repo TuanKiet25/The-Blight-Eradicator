@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1289368394729011132}
   - component: {fileID: 7732772269749763118}
   - component: {fileID: 8949221953948749854}
-  - component: {fileID: 6096994021895161075}
+  - component: {fileID: 2481999070378802822}
   m_Layer: 0
   m_Name: ThanDichBenh
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1217730619595123251}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.23, y: 0.26, z: 0}
+  m_LocalPosition: {x: 0.03126, y: -0.13892, z: 0}
   m_LocalScale: {x: 3.8300762, y: 3.8300762, z: 3.8300762}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,9 +81,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -920496499
-  m_SortingLayer: 9
+  m_SortingLayer: 10
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4549297002301125287, guid: bea8f45e648078d48b90d46e815fe963, type: 3}
+  m_Sprite: {fileID: -4549297002301125287, guid: e2097ac229c30774485a4f1339967b54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,7 +189,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6096994021895161075
+--- !u!114 &2481999070378802822
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,19 +198,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217730619595123251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abd3a6b6db8b134581033a7ebabbd14, type: 3}
+  m_Script: {fileID: 11500000, guid: 979ddfa377972444caf4ce81273795e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  idleSound: {fileID: 0}
+  summonSound: {fileID: 0}
+  hurtSound: {fileID: 0}
+  deathSound: {fileID: 0}
   moveSpeed: 2
   chargeSpeed: 6
   chargeDelay: 1.2
   detectRange: 8
-  attackRange: 1.5
+  summonRange: 3
   stopDistance: 0.4
-  attackDamage: 10
-  attackCooldown: 1.5
+  healthBar: {fileID: 0}
+  summonPrefab: {fileID: 0}
+  summonSpawnPoint: {fileID: 0}
+  summonOffset: {x: 1, y: 0, z: 0}
+  summonCooldown: 5
+  maxSummons: 2
+  summonAnimationDuration: 1
   playerPunchDamage: 2
   requiredPunchesToKill: 5
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  isDead: 0
