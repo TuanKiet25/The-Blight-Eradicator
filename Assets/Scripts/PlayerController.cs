@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int maxLives = 4;
     [SerializeField] private float punchDamage = 15f;
 
+    private const string GoldKey = "PlayerGold";
     private int currentLives;
     private float currentHealth;
     private float currentEnergy;
@@ -94,7 +95,8 @@ public class PlayerController : MonoBehaviour
         currentEnergy = maxEnergy;
 
         // 🔥 KHỞI TẠO VÀNG
-        currentGold = 0;
+        //currentGold = 0;
+        currentGold = PlayerPrefs.GetInt(GoldKey, 0);
         UpdateGoldUI(); // Cập nhật UI ngay lập tức
         // ---------------
 
@@ -291,6 +293,8 @@ public class PlayerController : MonoBehaviour
     public void AddGold(int amount)
     {
         currentGold += amount;
+        PlayerPrefs.SetInt(GoldKey, currentGold);
+        PlayerPrefs.Save();
         UpdateGoldUI();
         // Bạn có thể thêm hiệu ứng âm thanh/pop-up UI ở đây
         Debug.Log("Player đã nhận " + amount + " vàng. Tổng: " + currentGold);
@@ -471,6 +475,8 @@ public class PlayerController : MonoBehaviour
         {
             // Đủ tiền -> Trừ tiền và cập nhật UI
             currentGold -= amountToSpend;
+            PlayerPrefs.SetInt(GoldKey, currentGold);
+            PlayerPrefs.Save();
             UpdateGoldUI();
 
             // (Bạn có thể thêm âm thanh "mua đồ" ở đây)
