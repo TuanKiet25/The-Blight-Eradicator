@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float DoubleJumpEnergyCost = 5;
     [SerializeField] private float energyRegenRate = 5f;
     [SerializeField] private int maxLives = 4;
+    [SerializeField] private float punchDamage = 15f;
 
     private int currentLives;
     private float currentHealth;
@@ -252,7 +253,7 @@ public class PlayerController : MonoBehaviour
             var boss1 = enemy.GetComponent<BossController>();
             if (boss1 != null)
             {
-                boss1.TakeDamage(PunchEnergyCost);
+                boss1.TakeDamage(punchDamage);
                 continue;
             }
 
@@ -260,28 +261,28 @@ public class PlayerController : MonoBehaviour
             if (mimic != null)
             {
                 // Player gây sát thương là PunchEnergyCost
-                mimic.TakeDamage(PunchEnergyCost);
+                mimic.TakeDamage(punchDamage);
                 continue;
             }
 
             var enemyController = enemy.GetComponent<EnemyController>();
             if (enemyController != null)
             {
-                enemyController.TakeDamage(PunchEnergyCost);
+                enemyController.TakeDamage(punchDamage);
                 continue;
             }
 
             var rangedEnemyController = enemy.GetComponent<RangedEnemyController>();
             if (rangedEnemyController != null)
             {
-                rangedEnemyController.TakeDamage(PunchEnergyCost);
+                rangedEnemyController.TakeDamage(punchDamage);
                 continue;
             }
 
             var enemy1Controller = enemy.GetComponent<Enemy1Controller>();
             if (enemy1Controller != null)
             {
-                enemy1Controller.TakeDamage(PunchEnergyCost);
+                enemy1Controller.TakeDamage(punchDamage);
             }
         }
     }
@@ -434,5 +435,58 @@ public class PlayerController : MonoBehaviour
             // 5. Reset lại vật lý để nhân vật không bị trôi
             rb.linearVelocity = Vector2.zero;
         }
-    } 
+    }
+    public void UpgradeMaxHealth(float amountToAdd)
+    {
+        maxHealth += amountToAdd;
+        currentHealth = maxHealth; // Hồi đầy máu khi nâng cấp
+
+        // Cập nhật lại UI Slider
+        hpSlider.maxValue = maxHealth;
+        hpSlider.value = currentHealth;
+
+        Debug.Log("Máu tối đa đã nâng cấp lên: " + maxHealth);
+    }
+
+    public void UpgradeMaxEnergy(float amountToAdd)
+    {
+        maxEnergy += amountToAdd;
+        currentEnergy = maxEnergy; // Hồi đầy năng lượng
+
+        // Cập nhật lại UI Slider
+        energySlider.maxValue = maxEnergy;
+        energySlider.value = currentEnergy;
+
+        Debug.Log("Năng lượng tối đa đã nâng cấp lên: " + maxEnergy);
+    }
+
+    public void UpgradeDamage(float amountToAdd)
+    {
+        punchDamage += amountToAdd;
+        Debug.Log("Sát thương đã nâng cấp lên: " + punchDamage);
+    }
+    public bool TrySpendGold(int amountToSpend)
+    {
+        if (currentGold >= amountToSpend)
+        {
+            // Đủ tiền -> Trừ tiền và cập nhật UI
+            currentGold -= amountToSpend;
+            UpdateGoldUI();
+
+            // (Bạn có thể thêm âm thanh "mua đồ" ở đây)
+            // audioSource.PlayOneShot(buySound);
+
+            return true;
+        }
+        else
+        {
+            // Không đủ tiền
+            Debug.Log("Không đủ vàng!");
+
+            // (Bạn có thể thêm âm thanh "lỗi" ở đây)
+            // audioSource.PlayOneShot(errorSound);
+
+            return false;
+        }
+    }
 }
