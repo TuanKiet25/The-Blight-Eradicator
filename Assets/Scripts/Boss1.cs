@@ -11,6 +11,10 @@ public class BossController : MonoBehaviour
     public int attacksPerPhase = 3;
     public float restTimeBetweenPhases = 6f;
 
+    // 🔥 THÊM PHẠM VI PHÁT HIỆN BOSS
+    [Tooltip("Phạm vi Boss bắt đầu đuổi theo Player.")]
+    public float detectRange = 8f;
+
     [Header("Health")]
     public float maxHealth = 50f;
     private float currentHealth;
@@ -71,9 +75,13 @@ public class BossController : MonoBehaviour
 
         if (!isAttacking)
         {
-            if (distance <= attackRange)
+            if (distance <= attackRange) // 1. TRONG TẦM TẤN CÔNG (STOP)
             {
                 rb.linearVelocity = Vector2.zero;
+                animator.SetBool("isWalking", false);
+                // Dừng âm thanh bước đi nếu có
+                StopWalkSoundLoop();
+
                 FlipTowardsPlayer();
 
                 if (Time.time - lastAttackTime >= attackCooldown)
@@ -81,9 +89,15 @@ public class BossController : MonoBehaviour
                     StartCoroutine(AttackPhase());
                 }
             }
-            else
+            else if (distance <= detectRange) // 2. TRONG TẦM PHÁT HIỆN (CHASE)
             {
                 MoveTowardsPlayer();
+            }
+            else // 3. NGOÀI TẦM PHÁT HIỆN (IDLE/STANDBY)
+            {
+                rb.linearVelocity = Vector2.zero;
+                animator.SetBool("isWalking", false);
+                StopWalkSoundLoop();
             }
         }
     }
@@ -98,16 +112,23 @@ public class BossController : MonoBehaviour
         if (direction.x > 0 && !isFacingRight) Flip();
         else if (direction.x < 0 && isFacingRight) Flip();
 
-        // Chơi tiếng bước đi nhẹ nhẹ (loop). Chỉ phát khi gần người chơi.
-        float distance = Vector2.Distance(transform.position, player.position);
-        if (walkSound != null && audioSource != null && !audioSource.isPlaying && !isAttacking && !isResting && distance <= attackRange)
+        // Chơi tiếng bước đi nhẹ nhẹ (loop)
+        if (walkSound != null && audioSource != null && !audioSource.isPlaying && !isAttacking && !isResting)
         {
             audioSource.clip = walkSound;
             audioSource.loop = true;
             audioSource.Play();
-            Debug.Log("Boss playing walk loop: " + walkSound.name);
+            // Debug.Log("Boss playing walk loop: " + walkSound.name);
         }
+    }
 
+    // 🔥 HÀM MỚI: DỪNG ÂM THANH BƯỚC ĐI
+    private void StopWalkSoundLoop()
+    {
+        if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound && audioSource.loop)
+        {
+            audioSource.Stop();
+        }
     }
 
     private IEnumerator AttackPhase()
@@ -122,12 +143,9 @@ public class BossController : MonoBehaviour
             animator.SetTrigger("isAttacking");
             rb.linearVelocity = Vector2.zero;
 
-            // ⭐ Phát âm thanh tấn công đúng lúc boss vung tay
-            // stop walk loop (if any) so it doesn't clash with one-shot
-            if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound)
-            {
-                audioSource.Stop();
-            }
+            // ⭐ Dừng tiếng bước đi trước khi phát âm thanh tấn công
+            StopWalkSoundLoop();
+
             yield return new WaitForSeconds(damageFrameTime);
             if (attackSound != null && audioSource != null)
             {
@@ -151,11 +169,9 @@ public class BossController : MonoBehaviour
     {
         isResting = true;
         animator.SetBool("isWalking", false);
-        // stop walking loop when resting
-        if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound)
-        {
-            audioSource.Stop();
-        }
+        // Dừng walking loop khi nghỉ
+        StopWalkSoundLoop();
+
         yield return new WaitForSeconds(restTimeBetweenPhases);
         isResting = false;
     }
@@ -168,7 +184,7 @@ public class BossController : MonoBehaviour
         if (distance > attackRange) return;
 
         bool isPlayerInFront = (player.position.x - transform.position.x > 0 && isFacingRight)
-                            || (player.position.x - transform.position.x < 0 && !isFacingRight);
+                             || (player.position.x - transform.position.x < 0 && !isFacingRight);
 
         if (isPlayerInFront)
         {
@@ -211,11 +227,9 @@ public class BossController : MonoBehaviour
         isDead = true;
 
         animator.SetTrigger("isDeath");
-        // stop any loop and play death one-shot
-        if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound)
-        {
-            audioSource.Stop();
-        }
+        // Dừng bất kỳ loop nào và phát âm thanh chết
+        StopWalkSoundLoop();
+
         if (deathSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(deathSound);
@@ -257,17 +271,13 @@ public class BossController : MonoBehaviour
         transform.localScale = scale;
     }
 
-    private void PlaySound(AudioClip clip)
-    {
-        if (clip != null && audioSource != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
-
     private void OnDrawGizmosSelected()
     {
+        // Vùng phát hiện
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectRange);
+
+        // Vùng tấn công
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }

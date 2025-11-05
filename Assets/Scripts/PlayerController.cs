@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // 🔥 QUAN TRỌNG: Cần thêm thư viện này để dùng TextMeshPro
 
 public class PlayerController : MonoBehaviour
 {
+    // --- STATS ---
     [Header("Stats")]
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float maxEnergy = 50;
@@ -16,6 +18,13 @@ public class PlayerController : MonoBehaviour
     private int currentLives;
     private float currentHealth;
     private float currentEnergy;
+
+    // 🔥 LOGIC GOLD MỚI
+    [Header("Gold/Score")]
+    private int currentGold = 0;
+    // Kéo thả TextMeshProUGUI từ Inspector vào đây
+    [SerializeField] private TextMeshProUGUI goldText;
+    // -----------------
 
     [Header("UI Elements")]
     [SerializeField] private Slider hpSlider;
@@ -82,6 +91,11 @@ public class PlayerController : MonoBehaviour
         currentLives = maxLives;
         currentHealth = maxHealth;
         currentEnergy = maxEnergy;
+
+        // 🔥 KHỞI TẠO VÀNG
+        currentGold = 0;
+        UpdateGoldUI(); // Cập nhật UI ngay lập tức
+        // ---------------
 
         hpSlider.maxValue = maxHealth;
         hpSlider.value = currentHealth;
@@ -242,6 +256,14 @@ public class PlayerController : MonoBehaviour
                 continue;
             }
 
+            var mimic = enemy.GetComponent<MimicController>();
+            if (mimic != null)
+            {
+                // Player gây sát thương là PunchEnergyCost
+                mimic.TakeDamage(PunchEnergyCost);
+                continue;
+            }
+
             var enemyController = enemy.GetComponent<EnemyController>();
             if (enemyController != null)
             {
@@ -263,6 +285,26 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    // 🔥 HÀM MỚI: CỘNG VÀNG (Được gọi từ ChestController)
+    public void AddGold(int amount)
+    {
+        currentGold += amount;
+        UpdateGoldUI();
+        // Bạn có thể thêm hiệu ứng âm thanh/pop-up UI ở đây
+        Debug.Log("Player đã nhận " + amount + " vàng. Tổng: " + currentGold);
+    }
+
+    // 🔥 HÀM MỚI: Cập nhật hiển thị UI Vàng
+    private void UpdateGoldUI()
+    {
+        if (goldText != null)
+        {
+            // Hiển thị số vàng (bạn có thể tùy chỉnh định dạng)
+            goldText.text = currentGold.ToString();
+        }
+    }
+    // ----------------------------------------
 
     public void UseEnergy(float amount)
     {
