@@ -1,0 +1,549 @@
+fileFormatVersion: 2
+guid: 9d64b3a7006ea874882276bbaf92ec14
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8085203528890421677
+    second: Attack2.8_0
+  - first:
+      213: 4498968249926574498
+    second: Attack2.8_1
+  - first:
+      213: -7172308709254035410
+    second: Attack2.8_2
+  - first:
+      213: -3569383761964417658
+    second: Attack2.8_3
+  - first:
+      213: -5675189368455575143
+    second: Attack2.8_4
+  - first:
+      213: 997156435424855102
+    second: Attack2.8_5
+  - first:
+      213: 3986663735404865036
+    second: Attack2.8_6
+  - first:
+      213: -5502147644225994800
+    second: Attack2.8_7
+  - first:
+      213: 8659969000949885873
+    second: Attack2.8_8
+  - first:
+      213: 2667533063133562988
+    second: Attack2.8_9
+  - first:
+      213: -2924332334842587487
+    second: Attack2.8_10
+  - first:
+      213: 1771083599981618202
+    second: Attack2.8_11
+  - first:
+      213: 23577789398232155
+    second: Attack2.8_12
+  - first:
+      213: 4680403587350594754
+    second: Attack2.8_13
+  - first:
+      213: 8736824812439372306
+    second: Attack2.8_14
+  - first:
+      213: -4508230907287680124
+    second: Attack2.8_15
+  - first:
+      213: 7334458784051829978
+    second: Attack2.8_16
+  - first:
+      213: 3891849612082750660
+    second: Attack2.8_17
+  - first:
+      213: -7801113896569607708
+    second: Attack2.8_18
+  - first:
+      213: 2348198421808663324
+    second: Attack2.8_19
+  - first:
+      213: -4435342355484046639
+    second: Attack2.8_20
+  - first:
+      213: -2320332287334150351
+    second: Attack2.8_21
+  - first:
+      213: -8204713769343503646
+    second: Attack2.8_22
+  - first:
+      213: 2553020378599304075
+    second: Attack2.8_23
+  - first:
+      213: -5309587517722157483
+    second: Attack2.8_24
+  - first:
+      213: -459884557534145445
+    second: Attack2.8_25
+  - first:
+      213: 7726992839467923946
+    second: Attack2.8_26
+  - first:
+      213: -684805533697218808
+    second: Attack2.8_27
+  - first:
+      213: -2259389912894262444
+    second: Attack2.8_28
+  - first:
+      213: -798263330947072296
+    second: Attack2.8_29
+  - first:
+      213: -3645382514333748260
+    second: Attack2.8_30
+  - first:
+      213: 2449316628204444456
+    second: Attack2.8_31
+  - first:
+      213: -6688482997351892339
+    second: Attack2.8_32
+  - first:
+      213: -1818356341466019437
+    second: Attack2.8_33
+  - first:
+      213: 586243088874913136
+    second: Attack2.8_34
+  - first:
+      213: 5220820914010770258
+    second: Attack2.8_35
+  - first:
+      213: 3654026676010449956
+    second: Attack2.8_36
+  - first:
+      213: -3007586181141721667
+    second: Attack2.8_37
+  - first:
+      213: -7033611051401533456
+    second: Attack2.8_38
+  - first:
+      213: 6442246148677222728
+    second: Attack2.8_39
+  - first:
+      213: -1295198374307240143
+    second: Attack2.8_40
+  - first:
+      213: 8379334673607697531
+    second: Attack2.8_41
+  - first:
+      213: 8485208655879651952
+    second: Attack2.8_42
+  - first:
+      213: 6784403064683240248
+    second: Attack2.8_43
+  - first:
+      213: 3925263005931417704
+    second: Attack2.8_44
+  - first:
+      213: -4527940956807599711
+    second: Attack2.8_45
+  - first:
+      213: -8913581965237409698
+    second: Attack2.8_46
+  - first:
+      213: 7334376926986546486
+    second: Attack2.8_47
+  - first:
+      213: -6513175646035427156
+    second: Attack2.8_48
+  - first:
+      213: 7252763085426688470
+    second: Attack2.8_49
+  - first:
+      213: 7649947213603054423
+    second: Attack2.8_50
+  - first:
+      213: 1901954902309873173
+    second: Attack2.8_51
+  - first:
+      213: 7002482169219153585
+    second: Attack2.8_52
+  - first:
+      213: -4457838849967127350
+    second: Attack2.8_53
+  - first:
+      213: 3423775669052795704
+    second: Attack2.8_54
+  - first:
+      213: -5425360598187754108
+    second: Attack2.8_55
+  - first:
+      213: -7935973233037554816
+    second: Attack2.8_56
+  - first:
+      213: -1373347344815399527
+    second: Attack2.8_57
+  - first:
+      213: -2317938724587989674
+    second: Attack2.8_58
+  - first:
+      213: 313274720403897157
+    second: Attack2.8_59
+  - first:
+      213: -4759496429508860333
+    second: Attack2.8_60
+  - first:
+      213: 5456894271222040242
+    second: Attack2.8_61
+  - first:
+      213: -8300030855382460002
+    second: Attack2.8_62
+  - first:
+      213: 8855695870772343616
+    second: Attack2.8_63
+  - first:
+      213: -6957207132992990056
+    second: Attack2.8_64
+  - first:
+      213: 4656325158992307216
+    second: Attack2.8_65
+  - first:
+      213: 4548844245316353735
+    second: Attack2.8_66
+  - first:
+      213: -8110019058107150440
+    second: Attack2.8_67
+  - first:
+      213: 3988017922590683188
+    second: Attack2.8_68
+  - first:
+      213: -4399149327839046863
+    second: Attack2.8_69
+  - first:
+      213: -3627062513431308890
+    second: Attack2.8_70
+  - first:
+      213: 7862369570792630857
+    second: Attack2.8_71
+  - first:
+      213: 5673077565814417066
+    second: Attack2.8_72
+  - first:
+      213: -8757040127742883298
+    second: Attack2.8_73
+  - first:
+      213: 8335314726951560657
+    second: Attack2.8_74
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack2.8_0
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 1162
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da19f34b5c9643070800000000000000
+      internalID: 8085203528890421677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.8_1
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 973
+        width: 891
+        height: 182
+      alignment: 9
+      pivot: {x: 0.49341354, y: 0.73646027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a162a869cb8f6e30800000000000000
+      internalID: 4498968249926574498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.8_18
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 684
+        width: 873
+        height: 182
+      alignment: 9
+      pivot: {x: 0.5098494, y: 0.72686803}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9ea9e3e30ecb390800000000000000
+      internalID: -7801113896569607708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.8_34
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 448
+        width: 879
+        height: 182
+      alignment: 9
+      pivot: {x: 0.5047126, y: 0.71635586}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07dba68bbf0c22800800000000000000
+      internalID: 586243088874913136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.8_50
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 889
+        height: 277
+      alignment: 9
+      pivot: {x: 0.4999999, y: 0.47446126}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753ac49a5721a2a60800000000000000
+      internalID: 7649947213603054423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.8_52
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 0
+        width: 748
+        height: 271
+      alignment: 9
+      pivot: {x: 0.49940875, y: 0.4804219}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be7052ae60dd2160800000000000000
+      internalID: 7002482169219153585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 77b791262500b704faf4460a5a24c15e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack2.8_0: 8085203528890421677
+      Attack2.8_1: 4498968249926574498
+      Attack2.8_10: -2924332334842587487
+      Attack2.8_11: 1771083599981618202
+      Attack2.8_12: 23577789398232155
+      Attack2.8_13: 4680403587350594754
+      Attack2.8_14: 8736824812439372306
+      Attack2.8_15: -4508230907287680124
+      Attack2.8_16: 7334458784051829978
+      Attack2.8_17: 3891849612082750660
+      Attack2.8_18: -7801113896569607708
+      Attack2.8_19: 2348198421808663324
+      Attack2.8_2: -7172308709254035410
+      Attack2.8_20: -4435342355484046639
+      Attack2.8_21: -2320332287334150351
+      Attack2.8_22: -8204713769343503646
+      Attack2.8_23: 2553020378599304075
+      Attack2.8_24: -5309587517722157483
+      Attack2.8_25: -459884557534145445
+      Attack2.8_26: 7726992839467923946
+      Attack2.8_27: -684805533697218808
+      Attack2.8_28: -2259389912894262444
+      Attack2.8_29: -798263330947072296
+      Attack2.8_3: -3569383761964417658
+      Attack2.8_30: -3645382514333748260
+      Attack2.8_31: 2449316628204444456
+      Attack2.8_32: -6688482997351892339
+      Attack2.8_33: -1818356341466019437
+      Attack2.8_34: 586243088874913136
+      Attack2.8_35: 5220820914010770258
+      Attack2.8_36: 3654026676010449956
+      Attack2.8_37: -3007586181141721667
+      Attack2.8_38: -7033611051401533456
+      Attack2.8_39: 6442246148677222728
+      Attack2.8_4: -5675189368455575143
+      Attack2.8_40: -1295198374307240143
+      Attack2.8_41: 8379334673607697531
+      Attack2.8_42: 8485208655879651952
+      Attack2.8_43: 6784403064683240248
+      Attack2.8_44: 3925263005931417704
+      Attack2.8_45: -4527940956807599711
+      Attack2.8_46: -8913581965237409698
+      Attack2.8_47: 7334376926986546486
+      Attack2.8_48: -6513175646035427156
+      Attack2.8_49: 7252763085426688470
+      Attack2.8_5: 997156435424855102
+      Attack2.8_50: 7649947213603054423
+      Attack2.8_51: 1901954902309873173
+      Attack2.8_52: 7002482169219153585
+      Attack2.8_53: -4457838849967127350
+      Attack2.8_54: 3423775669052795704
+      Attack2.8_55: -5425360598187754108
+      Attack2.8_56: -7935973233037554816
+      Attack2.8_57: -1373347344815399527
+      Attack2.8_58: -2317938724587989674
+      Attack2.8_59: 313274720403897157
+      Attack2.8_6: 3986663735404865036
+      Attack2.8_60: -4759496429508860333
+      Attack2.8_61: 5456894271222040242
+      Attack2.8_62: -8300030855382460002
+      Attack2.8_63: 8855695870772343616
+      Attack2.8_64: -6957207132992990056
+      Attack2.8_65: 4656325158992307216
+      Attack2.8_66: 4548844245316353735
+      Attack2.8_67: -8110019058107150440
+      Attack2.8_68: 3988017922590683188
+      Attack2.8_69: -4399149327839046863
+      Attack2.8_7: -5502147644225994800
+      Attack2.8_70: -3627062513431308890
+      Attack2.8_71: 7862369570792630857
+      Attack2.8_72: 5673077565814417066
+      Attack2.8_73: -8757040127742883298
+      Attack2.8_74: 8335314726951560657
+      Attack2.8_8: 8659969000949885873
+      Attack2.8_9: 2667533063133562988
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
