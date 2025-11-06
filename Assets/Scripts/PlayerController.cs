@@ -263,6 +263,13 @@ public class PlayerController : MonoBehaviour
                 continue;
             }
 
+            var boss2 = enemy.GetComponent<Boss2Controller>();
+            if (boss2 != null)
+            {
+                boss2.TakeDamage(punchDamage);
+                continue;
+            }
+
             var mimic = enemy.GetComponent<MimicController>();
             if (mimic != null)
             {

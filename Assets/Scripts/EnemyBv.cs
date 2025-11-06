@@ -5,28 +5,32 @@ public class RangedEnemyController : MonoBehaviour
 {
     // --- STATS ---
     [Header("Stats")]
-    public float moveSpeed = 1.5f;   // Tốc độ di chuyển khi đuổi theo
-    public float attackRange = 8f;   // Phạm vi tấn công (Raycast)
-    public float stopRange = 5f;     // Khoảng cách dừng lại để bắn
+    public float moveSpeed = 1.5f;    // Tốc độ di chuyển khi đuổi theo
+    public float attackRange = 8f;    // Phạm vi tấn công (Raycast)
+    public float stopRange = 5f;      // Khoảng cách dừng lại để bắn
     public float attackCooldown = 3.0f;
-    public float detectRange = 10f;  // Phạm vi phát hiện Player
+    public float detectRange = 10f;   // Phạm vi phát hiện Player
     public float attackDamage = 5f;
 
-    // --- HEALTH & SÁT THƯƠNG TỪ PLAYER ---
+    // 🔥 --- PHẦN HEALTH ĐÃ SỬA ---
     [Header("Health")]
-    [Tooltip("Sát thương Player gây ra trong 1 cú đấm.")]
-    [SerializeField] private float playerPunchDamage = 2f;
-    [Tooltip("Số lần Player phải đấm để Enemy chết.")]
-    [SerializeField] private int requiredPunchesToKill = 3;
-    private float maxHealth;
+    [Tooltip("Tổng lượng máu của quái. Player (punchDamage) đang gây 15f damage mỗi cú đấm.")]
+    public float maxHealth = 45f; // Mặc định 45f (chịu được 3 cú đấm 15f)
     private float currentHealth;
+    // ---------------------------------
+
+    // 🔥 --- THÊM LOGIC RỚT VÀNG ---
+    [Header("Loot")]
+    [Tooltip("Số lượng vàng rớt ra khi quái chết.")]
+    public int goldDropAmount = 10; // Tùy chỉnh số vàng rớt ra
+    // ---------------------------------
 
     // --- SOUNDS ---
     [Header("Sound")]
     [SerializeField] private AudioClip shootSound; // Âm thanh khi bắn
     [SerializeField] private AudioClip hurtSound;  // Âm thanh khi bị đánh
     [SerializeField] private AudioClip deathSound; // Âm thanh khi chết
-    private AudioSource audioSource;               // Component phát âm thanh
+    private AudioSource audioSource;            // Component phát âm thanh
 
     // --- ANIMATION & REFERENCES ---
     [Header("Animation Timings")]
@@ -52,20 +56,18 @@ public class RangedEnemyController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
-        // 🔥 Lấy hoặc thêm AudioSource
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
         {
             audioSource = gameObject.AddComponent<AudioSource>();
-            audioSource.playOnAwake = false; // Không phát khi Start
-            // Tùy chỉnh Volume nếu cần (ví dụ: audioSource.volume = 0.7f;)
+            audioSource.playOnAwake = false;
         }
 
         lastAttackTime = Time.time;
-        maxHealth = requiredPunchesToKill * playerPunchDamage;
+
+        // 🔥 Gán máu trực tiếp từ biến maxHealth
         currentHealth = maxHealth;
 
-        // Bắt đầu ở trạng thái Idle
         animator.SetBool("isWalking", false);
     }
 
@@ -74,7 +76,6 @@ public class RangedEnemyController : MonoBehaviour
         if (isDead || player == null) return;
         if (isAttacking)
         {
-            // Dừng di chuyển khi đang tấn công
             rb.linearVelocity = Vector2.zero;
             return;
         }
@@ -85,7 +86,7 @@ public class RangedEnemyController : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
-            FlipTowardsPlayer(); // Luôn nhìn về Player
+            FlipTowardsPlayer();
 
             if (Time.time - lastAttackTime >= attackCooldown)
             {
@@ -94,7 +95,7 @@ public class RangedEnemyController : MonoBehaviour
         }
         else if (distance <= detectRange) // 2. ĐÃ PHÁT HIỆN, DI CHUYỂN VÀO TẦM BẮN
         {
-            MoveTowardsPlayer(); // Đuổi theo
+            MoveTowardsPlayer();
         }
         else // 3. NGOÀI TẦM PHÁT HIỆN -> ĐỨNG YÊN HOÀN TOÀN
         {
@@ -137,43 +138,34 @@ public class RangedEnemyController : MonoBehaviour
         animator.SetTrigger("isAttacking");
         rb.linearVelocity = Vector2.zero;
 
-        // Chờ hết hoạt ảnh tấn công (Animation Event sẽ gây sát thương ở giữa)
         yield return new WaitForSeconds(attackAnimationDuration);
 
         isAttacking = false;
         lastAttackTime = Time.time;
     }
 
-    // 🔥 HÀM GÂY SÁT THƯƠNG TẦM XA (Được gọi từ Animation Event)
     public void ApplyDamageToPlayer()
     {
-        // 1. Phát âm thanh bắn
         if (shootSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(shootSound);
         }
 
-        // Sử dụng firePoint.position cho điểm xuất phát của Raycast
         if (player == null || isDead || firePoint == null) return;
 
-        // 2. Xác định hướng nhìn
         Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;
-
-        // 3. Thực hiện Raycast (Kiểm tra tia)
         RaycastHit2D hit = Physics2D.Raycast(firePoint.position, direction, attackRange, playerLayer);
 
-        // 4. Xử lý kết quả Raycast
+
+
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Player"))
             {
-                // Giả định bạn có script PlayerController với hàm TakeDamage
                 var playerController = hit.collider.GetComponent<PlayerController>();
                 if (playerController != null)
                 {
-                    // Gây sát thương TẦM XA trực tiếp (Tức thì)
-                    // Lưu ý: PlayerController cần được định nghĩa trong project của bạn
-                    playerController.TakeDamage(attackDamage); 
+                    playerController.TakeDamage(attackDamage);
                     Debug.Log("Enemy bắn trúng Player gây " + attackDamage + " sát thương!");
                 }
             }
@@ -185,7 +177,6 @@ public class RangedEnemyController : MonoBehaviour
     {
         if (isDead) return;
 
-        // 1. Phát âm thanh Bị thương
         if (hurtSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(hurtSound);
@@ -199,7 +190,6 @@ public class RangedEnemyController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            // Vô hiệu hóa Collider trước khi gọi Die()
             GetComponent<Collider2D>().enabled = false;
             Die();
         }
@@ -214,11 +204,32 @@ public class RangedEnemyController : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        // 2. Phát âm thanh Chết
         if (deathSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(deathSound);
         }
+
+        // 🔥 --- BẮT ĐẦU LOGIC RỚT VÀNG ---
+        // Chúng ta đã có biến 'player' (Transform) từ hàm Start()
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                // 2. Gọi hàm AddGold() của Player
+                playerController.AddGold(goldDropAmount);
+                Debug.Log(gameObject.name + " rớt ra " + goldDropAmount + " vàng.");
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Player object thiếu script PlayerController!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Lỗi: Không tìm thấy Player trong Scene (Kiểm tra Tag 'Player')!");
+        }
+        // 🔥 --- KẾT THÚC LOGIC RỚT VÀNG ---
 
         StopAllCoroutines();
         animator.SetTrigger("isDeath");
@@ -232,26 +243,21 @@ public class RangedEnemyController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 
-        // Hủy đối tượng sau 2 giây (cho phép hoạt ảnh và âm thanh chết chạy xong)
         Destroy(gameObject, 2f);
     }
 
     // --- GIZMOS ---
     private void OnDrawGizmosSelected()
     {
-        // Vùng dừng lại và bắn
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, stopRange);
 
-        // Vùng tấn công (tầm bắn)
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
-        // Vùng phát hiện
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectRange);
 
-        // Visual Raycast
         if (firePoint != null)
         {
             Vector2 direction = isFacingRight ? Vector2.right : Vector2.left;

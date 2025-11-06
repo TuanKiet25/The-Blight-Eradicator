@@ -1,0 +1,351 @@
+fileFormatVersion: 2
+guid: 94b560d241b23834386269f0a3b455f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3965078190018447642
+    second: Attack2.7_0
+  - first:
+      213: 2161704155191593673
+    second: Attack2.7_1
+  - first:
+      213: -5601619331325219661
+    second: Attack2.7_2
+  - first:
+      213: 4384134749814323665
+    second: Attack2.7_3
+  - first:
+      213: 3199675716017823260
+    second: Attack2.7_4
+  - first:
+      213: 7144329136222079820
+    second: Attack2.7_5
+  - first:
+      213: 205282231969587887
+    second: Attack2.7_6
+  - first:
+      213: 4406507746106622829
+    second: Attack2.7_7
+  - first:
+      213: 1627465114535340090
+    second: Attack2.7_8
+  - first:
+      213: 1695995200135013574
+    second: Attack2.7_9
+  - first:
+      213: 3231840828197846343
+    second: Attack2.7_10
+  - first:
+      213: 5817999360396932307
+    second: Attack2.7_11
+  - first:
+      213: 3871287720646568769
+    second: Attack2.7_12
+  - first:
+      213: -113773440563119844
+    second: Attack2.7_13
+  - first:
+      213: 6577622083357187671
+    second: Attack2.7_14
+  - first:
+      213: -7012003108644326375
+    second: Attack2.7_15
+  - first:
+      213: -7913227846933651246
+    second: Attack2.7_16
+  - first:
+      213: 7154140184932197327
+    second: Attack2.7_17
+  - first:
+      213: -4454945641377260727
+    second: Attack2.7_18
+  - first:
+      213: 5900546746521779695
+    second: Attack2.7_19
+  - first:
+      213: 5886954976725012677
+    second: Attack2.7_20
+  - first:
+      213: -193014086044481774
+    second: Attack2.7_21
+  - first:
+      213: 4354222451148825358
+    second: Attack2.7_22
+  - first:
+      213: 723024652452911565
+    second: Attack2.7_23
+  - first:
+      213: 8705820647059841570
+    second: Attack2.7_24
+  - first:
+      213: 8376449288363272751
+    second: Attack2.7_25
+  - first:
+      213: 7989255824188237717
+    second: Attack2.7_26
+  - first:
+      213: 2838533299003741672
+    second: Attack2.7_27
+  - first:
+      213: -2876786014298169372
+    second: Attack2.7_28
+  - first:
+      213: -8469768268479165819
+    second: Attack2.7_29
+  - first:
+      213: 1431973266506962106
+    second: Attack2.7_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack2.7_0
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 858
+        width: 302
+        height: 308
+      alignment: 9
+      pivot: {x: 0.52429175, y: -0.8457408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19c2be1b99c60730800000000000000
+      internalID: 3965078190018447642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.7_1
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 912
+        width: 740
+        height: 194
+      alignment: 9
+      pivot: {x: 0.5049569, y: 0.65126145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ca4ea7d97aeffd10800000000000000
+      internalID: 2161704155191593673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.7_2
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 912
+        width: 36
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bc266595ec0342b0800000000000000
+      internalID: -5601619331325219661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.7_3
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 516
+        width: 874
+        height: 194
+      alignment: 9
+      pivot: {x: 0.5062953, y: 0.67508876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d9f02aa35397dc30800000000000000
+      internalID: 4384134749814323665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack2.7_14
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 113
+        width: 885
+        height: 182
+      alignment: 9
+      pivot: {x: 0.49324813, y: 0.7132407}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e15416f68684b50800000000000000
+      internalID: 6577622083357187671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b5a83569d6cec4c44b5bee2df1c67629
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack2.7_0: 3965078190018447642
+      Attack2.7_1: 2161704155191593673
+      Attack2.7_10: 3231840828197846343
+      Attack2.7_11: 5817999360396932307
+      Attack2.7_12: 3871287720646568769
+      Attack2.7_13: -113773440563119844
+      Attack2.7_14: 6577622083357187671
+      Attack2.7_15: -7012003108644326375
+      Attack2.7_16: -7913227846933651246
+      Attack2.7_17: 7154140184932197327
+      Attack2.7_18: -4454945641377260727
+      Attack2.7_19: 5900546746521779695
+      Attack2.7_2: -5601619331325219661
+      Attack2.7_20: 5886954976725012677
+      Attack2.7_21: -193014086044481774
+      Attack2.7_22: 4354222451148825358
+      Attack2.7_23: 723024652452911565
+      Attack2.7_24: 8705820647059841570
+      Attack2.7_25: 8376449288363272751
+      Attack2.7_26: 7989255824188237717
+      Attack2.7_27: 2838533299003741672
+      Attack2.7_28: -2876786014298169372
+      Attack2.7_29: -8469768268479165819
+      Attack2.7_3: 4384134749814323665
+      Attack2.7_30: 1431973266506962106
+      Attack2.7_4: 3199675716017823260
+      Attack2.7_5: 7144329136222079820
+      Attack2.7_6: 205282231969587887
+      Attack2.7_7: 4406507746106622829
+      Attack2.7_8: 1627465114535340090
+      Attack2.7_9: 1695995200135013574
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

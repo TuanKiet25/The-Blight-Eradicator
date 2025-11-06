@@ -15,6 +15,12 @@ public class MimicController : MonoBehaviour
     [SerializeField] private int requiredPunchesToKill = 5; // chỉ để tham khảo
     private float currentHealth;
 
+    // 🔥 --- THÊM LOGIC RỚT VÀNG ---
+    [Header("Loot")]
+    [Tooltip("Số lượng vàng rớt ra khi Mimic chết.")]
+    public int goldDropAmount = 75; // Mimic rớt nhiều vàng
+    // ---------------------------------
+
     [Header("Invulnerability")]
     [Tooltip("Khoảng thời gian bất khả sát thương ngay sau khi nhận hit (giây).")]
     [SerializeField] private float invulnerabilityDuration = 0.25f;
@@ -43,7 +49,6 @@ public class MimicController : MonoBehaviour
     private float lastAttackTime = 0f;
 
     private bool isDiscovered = false;
-    // Mimic cố định nhìn trái theo ý bạn; nhưng không dùng const để có thể thay đổi sau này
     private bool isFacingRight = false;
 
     void Start()
@@ -62,23 +67,16 @@ public class MimicController : MonoBehaviour
         lastAttackTime = Time.time;
         isDiscovered = false;
 
-        // If you want maxHealth to derive from requiredPunchesToKill & a known player damage,
-        // you can set it in inspector or uncomment below (but be careful with mismatches).
-        // maxHealth = requiredPunchesToKill * assumedPlayerDamage;
-
+        // HP đã được gán đúng từ maxHealth
         currentHealth = maxHealth;
 
-        // Keep static if you intentionally want it immobile until awakened
         if (rb != null) rb.bodyType = RigidbodyType2D.Static;
     }
 
     void Update()
     {
         if (isDead || player == null) return;
-
-        // Nếu muốn mimic không di chuyển, giữ velocity = 0
         if (rb != null) rb.linearVelocity = Vector2.zero;
-
         if (isAttacking) return;
 
         float distance = Vector2.Distance(transform.position, player.position);
@@ -99,28 +97,21 @@ public class MimicController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Nhận sát thương từ Player.
-    /// Có invulnerability nhỏ để tránh nhận nhiều hit liên tiếp trong 1 frame.
-    /// </summary>
     public void TakeDamage(float dmg)
     {
         if (isDead) return;
         if (isInvulnerable) return;
 
-        // Ghi nhận bị đánh => tạm ngắt hành vi tấn công đang diễn
         isAttacking = false;
 
         currentHealth -= dmg;
         StartCoroutine(TemporaryInvulnerability(invulnerabilityDuration));
 
-        // Phát âm thanh hurt (kiểm tra null)
         if (audioSource != null && hurtSound != null)
         {
             audioSource.PlayOneShot(hurtSound);
         }
 
-        // Trigger animation hurt
         if (animator != null)
         {
             animator.SetTrigger("isHurt");
@@ -139,10 +130,6 @@ public class MimicController : MonoBehaviour
         isInvulnerable = false;
     }
 
-    /// <summary>
-    /// Gây sát thương cho Player khi Mimic đang trong khung tấn công.
-    /// Kiểm tra khoảng cách + hướng (mimic mặc định nhìn trái).
-    /// </summary>
     public void ApplyDamageToPlayer()
     {
         if (player == null || isDead || !isAttacking) return;
@@ -151,8 +138,6 @@ public class MimicController : MonoBehaviour
         if (distance > attackRange) return;
 
         float directionX = player.position.x - transform.position.x;
-
-        // Logic: Mimic mặc định "nhìn trái" nếu isFacingRight == false
         bool isPlayerInFront = isFacingRight ? (directionX > 0) : (directionX < 0);
 
         if (isPlayerInFront)
@@ -215,14 +200,43 @@ public class MimicController : MonoBehaviour
         Collider2D[] allColliders = GetComponents<Collider2D>();
         foreach (Collider2D col in allColliders) col.enabled = false;
 
-        // Phát âm thanh death
         if (audioSource != null && deathSound != null) audioSource.PlayOneShot(deathSound);
+
+        // 🔥 --- BẮT ĐẦU LOGIC RỚT VÀNG ---
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.AddGold(goldDropAmount);
+                Debug.Log("Mimic rớt ra " + goldDropAmount + " vàng.");
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Player object (từ cache) thiếu script PlayerController!");
+            }
+        }
+        else
+        {
+            // Dự phòng nếu cache 'player' bị null
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                PlayerController playerController = playerObject.GetComponent<PlayerController>();
+                if (playerController != null) playerController.AddGold(goldDropAmount);
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Không tìm thấy Player trong Scene (Kiểm tra Tag 'Player')!");
+            }
+        }
+        // 🔥 --- KẾT THÚC LOGIC RỚT VÀNG ---
 
         this.enabled = false;
         Destroy(gameObject, 2f);
     }
 
-    // Placeholder nếu sau này bạn muốn dùng flip/chuyển hướng
+    // (Giữ nguyên các hàm còn lại: Flip, PlayLoopSound, StopLoopSound, OnDrawGizmosSelected)
     private void FlipTowardsPlayer() { }
     private void Flip() { }
 

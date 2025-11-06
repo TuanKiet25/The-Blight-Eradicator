@@ -131,8 +131,9 @@ MonoBehaviour:
   attackRange: 1
   attackCooldown: 2
   attackDamage: 15
-  maxHealth: 0
+  maxHealth: 50
   requiredPunchesToKill: 1
+  goldDropAmount: 5
   invulnerabilityDuration: 0.25
   attackAnimationDuration: 1.2
   damageFrameTime: 0.5

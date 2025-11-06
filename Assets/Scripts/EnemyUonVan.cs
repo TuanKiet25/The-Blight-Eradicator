@@ -14,17 +14,23 @@ public class Enemy1Controller : MonoBehaviour
     public float attackDamage = 10f;
     public float attackCooldown = 1.5f;
 
+    // 🔥 --- PHẦN HEALTH ĐÃ SỬA ---
     [Header("Health")]
-    [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
-    [SerializeField] private float playerPunchDamage = 2f;
-    [Tooltip("Số lần Player phải đấm để Enemy chết. (Cần là 5)")]
-    [SerializeField] private int requiredPunchesToKill = 5;
-    private float maxHealth;
+    [Tooltip("Tổng lượng máu của quái. Player (punchDamage) đang gây 15f damage mỗi cú đấm.")]
+    // Player đấm 15f, quái cũ cần 5 cú đấm => 15 * 5 = 75f
+    public float maxHealth = 75f;
     private float currentHealth;
+    // ---------------------------------
+
+    // 🔥 --- THÊM LOGIC RỚT VÀNG ---
+    [Header("Loot")]
+    [Tooltip("Số lượng vàng rớt ra khi quái chết.")]
+    public int goldDropAmount = 20; // Tùy chỉnh số vàng rớt ra
+    // ---------------------------------
 
     [Header("References")]
     public LayerMask playerLayer;
-    
+
     [Header("Audio")]
     public AudioClip idleSound;
     public AudioClip walkSound;
@@ -54,12 +60,9 @@ public class Enemy1Controller : MonoBehaviour
             audioSource.playOnAwake = false;
         }
 
-        // Do not auto-play idle on spawn. Idle will resume when enemy is stopped
-        // and the player is nearby (handled in StopChargeMovement()).
-
         lastAttackTime = Time.time;
 
-        maxHealth = requiredPunchesToKill * playerPunchDamage;
+        // 🔥 Gán máu trực tiếp từ biến maxHealth
         currentHealth = maxHealth;
     }
 
@@ -140,7 +143,6 @@ public class Enemy1Controller : MonoBehaviour
         animator.SetBool("isPreparing", false);
         animator.SetBool("isWalking", true);
 
-        // Play walk loop (switch from idle)
         if (walkSound != null && audioSource != null)
         {
             audioSource.clip = walkSound;
@@ -178,7 +180,6 @@ public class Enemy1Controller : MonoBehaviour
         isChargeMoving = false;
         isChargingDelay = false;
 
-        // Switch back to idle or stop audio — only resume idle if player is nearby
         if (audioSource != null)
         {
             if (idleSound != null && player != null)
@@ -223,43 +224,8 @@ public class Enemy1Controller : MonoBehaviour
         transform.localScale = scale;
     }
 
-    // Optional: small context menu tests from Inspector
-    [ContextMenu("Test Play Idle Sound")]
-    private void TestPlayIdle()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (idleSound != null && audioSource != null)
-        {
-            audioSource.clip = idleSound;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
-        else Debug.LogWarning("Idle sound or AudioSource missing on " + gameObject.name);
-    }
-
-    [ContextMenu("Test Play Walk Sound")]
-    private void TestPlayWalk()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (walkSound != null && audioSource != null)
-        {
-            audioSource.clip = walkSound;
-            audioSource.loop = true;
-            audioSource.Play();
-        }
-        else Debug.LogWarning("Walk sound or AudioSource missing on " + gameObject.name);
-    }
-
-    [ContextMenu("Test Play Death Sound")]
-    private void TestPlayDeath()
-    {
-        if (audioSource == null) audioSource = GetComponent<AudioSource>();
-        if (deathSound != null && audioSource != null)
-        {
-            audioSource.PlayOneShot(deathSound);
-        }
-        else Debug.LogWarning("Death sound or AudioSource missing on " + gameObject.name);
-    }
+    // [ContextMenu("Test Play Idle Sound")] // (Giữ lại các hàm Test nếu bạn muốn)
+    // ...
 
     public void TakeDamage(float dmg)
     {
@@ -291,14 +257,44 @@ public class Enemy1Controller : MonoBehaviour
 
         animator.SetTrigger("isDeath");
 
-        // Play death sound (one-shot)
         if (deathSound != null && audioSource != null)
         {
-            // stop loop
             if (audioSource.isPlaying) audioSource.Stop();
             audioSource.PlayOneShot(deathSound);
             Debug.Log(gameObject.name + " played death sound: " + deathSound.name);
         }
+
+        // 🔥 --- BẮT ĐẦU LOGIC RỚT VÀNG ---
+        // 'player' (Transform) đã được cache trong Start()
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                // Gọi hàm AddGold() của Player
+                playerController.AddGold(goldDropAmount);
+                Debug.Log(gameObject.name + " rớt ra " + goldDropAmount + " vàng.");
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Player object thiếu script PlayerController!");
+            }
+        }
+        else
+        {
+            // Dự phòng nếu cache 'player' bị null
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                PlayerController playerController = playerObject.GetComponent<PlayerController>();
+                if (playerController != null) playerController.AddGold(goldDropAmount);
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Không tìm thấy Player trong Scene (Kiểm tra Tag 'Player')!");
+            }
+        }
+        // 🔥 --- KẾT THÚC LOGIC RỚT VÀNG ---
 
         GetComponent<Collider2D>().enabled = false;
 
