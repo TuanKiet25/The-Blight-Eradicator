@@ -24,6 +24,6 @@ public class PlayerState : MonoBehaviour
 
             // 6. Tải scene tiếp theo
             SceneManager.LoadScene(nextSceneName);
-        }
+        }//helol
     }
 }
