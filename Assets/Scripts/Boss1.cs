@@ -11,13 +11,18 @@ public class BossController : MonoBehaviour
     public int attacksPerPhase = 3;
     public float restTimeBetweenPhases = 6f;
 
-    // 🔥 THÊM PHẠM VI PHÁT HIỆN BOSS
     [Tooltip("Phạm vi Boss bắt đầu đuổi theo Player.")]
     public float detectRange = 8f;
 
     [Header("Health")]
     public float maxHealth = 50f;
     private float currentHealth;
+
+    // 🔥 --- THÊM LOGIC RỚT VÀNG ---
+    [Header("Loot")]
+    [Tooltip("Số lượng vàng rớt ra khi Boss chết.")]
+    public int goldDropAmount = 100; // Boss rớt nhiều vàng hơn
+    // ---------------------------------
 
     [Header("Animation Timings")]
     public float attackAnimationDuration = 1.2f;
@@ -55,9 +60,10 @@ public class BossController : MonoBehaviour
             audioSource.playOnAwake = false;
         }
 
-        // Ensure 2D playback and reasonable default volume
-        audioSource.spatialBlend = 0f; // 0 = 2D
+        audioSource.spatialBlend = 0f;
         audioSource.volume = Mathf.Clamp01(audioSource.volume <= 0f ? 0.8f : audioSource.volume);
+
+        // Biến 'player' đã được cache ở đây, rất tốt!
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
 
         currentHealth = maxHealth;
@@ -79,9 +85,7 @@ public class BossController : MonoBehaviour
             {
                 rb.linearVelocity = Vector2.zero;
                 animator.SetBool("isWalking", false);
-                // Dừng âm thanh bước đi nếu có
                 StopWalkSoundLoop();
-
                 FlipTowardsPlayer();
 
                 if (Time.time - lastAttackTime >= attackCooldown)
@@ -112,17 +116,14 @@ public class BossController : MonoBehaviour
         if (direction.x > 0 && !isFacingRight) Flip();
         else if (direction.x < 0 && isFacingRight) Flip();
 
-        // Chơi tiếng bước đi nhẹ nhẹ (loop)
         if (walkSound != null && audioSource != null && !audioSource.isPlaying && !isAttacking && !isResting)
         {
             audioSource.clip = walkSound;
             audioSource.loop = true;
             audioSource.Play();
-            // Debug.Log("Boss playing walk loop: " + walkSound.name);
         }
     }
 
-    // 🔥 HÀM MỚI: DỪNG ÂM THANH BƯỚC ĐI
     private void StopWalkSoundLoop()
     {
         if (audioSource != null && audioSource.isPlaying && audioSource.clip == walkSound && audioSource.loop)
@@ -143,7 +144,6 @@ public class BossController : MonoBehaviour
             animator.SetTrigger("isAttacking");
             rb.linearVelocity = Vector2.zero;
 
-            // ⭐ Dừng tiếng bước đi trước khi phát âm thanh tấn công
             StopWalkSoundLoop();
 
             yield return new WaitForSeconds(damageFrameTime);
@@ -152,12 +152,9 @@ public class BossController : MonoBehaviour
                 audioSource.PlayOneShot(attackSound);
             }
 
-            // ⭐ Gây sát thương sau khi đánh trúng
             ApplyDamageToPlayer();
 
-            // Đợi cho hết animation
             yield return new WaitForSeconds(attackAnimationDuration - damageFrameTime);
-
             yield return new WaitForSeconds(attackCooldown);
         }
 
@@ -169,7 +166,6 @@ public class BossController : MonoBehaviour
     {
         isResting = true;
         animator.SetBool("isWalking", false);
-        // Dừng walking loop khi nghỉ
         StopWalkSoundLoop();
 
         yield return new WaitForSeconds(restTimeBetweenPhases);
@@ -227,7 +223,6 @@ public class BossController : MonoBehaviour
         isDead = true;
 
         animator.SetTrigger("isDeath");
-        // Dừng bất kỳ loop nào và phát âm thanh chết
         StopWalkSoundLoop();
 
         if (deathSound != null && audioSource != null)
@@ -246,7 +241,38 @@ public class BossController : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
 
-        // ⭐ Giữ xác lâu hơn rồi mới biến mất
+        // 🔥 --- BẮT ĐẦU LOGIC RỚT VÀNG ---
+        // 'player' (Transform) đã được cache trong Start()
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                // Gọi hàm AddGold() của Player
+                playerController.AddGold(goldDropAmount);
+                Debug.Log("Boss rớt ra " + goldDropAmount + " vàng.");
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Player object thiếu script PlayerController!");
+            }
+        }
+        else
+        {
+            // Dự phòng nếu cache 'player' bị null (mặc dù nó không nên)
+            GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+            if (playerObject != null)
+            {
+                PlayerController playerController = playerObject.GetComponent<PlayerController>();
+                if (playerController != null) playerController.AddGold(goldDropAmount);
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Không tìm thấy Player trong Scene (Kiểm tra Tag 'Player')!");
+            }
+        }
+        // 🔥 --- KẾT THÚC LOGIC RỚT VÀNG ---
+
         StartCoroutine(FadeAndDestroy(4f)); // 4 giây sau mới xoá
     }
 
@@ -273,11 +299,9 @@ public class BossController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        // Vùng phát hiện
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, detectRange);
 
-        // Vùng tấn công
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }

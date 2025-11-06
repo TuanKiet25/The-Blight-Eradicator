@@ -10,13 +10,18 @@ public class EnemyController : MonoBehaviour
     public float detectRange = 6f;
     public float attackDamage = 10f;
 
+    // 🔥 --- PHẦN HEALTH ĐÃ SỬA ---
     [Header("Health")]
-    [Tooltip("Sát thương Player gây ra trong 1 cú đấm. (Nên là 2f)")]
-    [SerializeField] private float playerPunchDamage = 2f;
-    [Tooltip("Số lần Player phải đấm để Enemy chết. (Cần là 2)")]
-    [SerializeField] private int requiredPunchesToKill = 2;
-    private float maxHealth;
+    [Tooltip("Tổng lượng máu của quái. Player (punchDamage) đang gây 15f damage mỗi cú đấm.")]
+    public float maxHealth = 30f;
     private float currentHealth;
+    // ---------------------------------
+
+    // 🔥 --- THÊM LOGIC RỚT VÀNG ---
+    [Header("Loot")]
+    [Tooltip("Số lượng vàng rớt ra khi quái chết.")]
+    public int goldDropAmount = 5; // Đặt số vàng rớt ra, có thể chỉnh trong Inspector
+    // ---------------------------------
 
     [Header("Animation Timings")]
     public float attackAnimationDuration = 1.0f;
@@ -60,8 +65,6 @@ public class EnemyController : MonoBehaviour
         audioSource.volume = Mathf.Clamp01(audioSource.volume <= 0f ? 0.8f : audioSource.volume);
 
         lastAttackTime = Time.time;
-
-        maxHealth = requiredPunchesToKill * playerPunchDamage;
         currentHealth = maxHealth;
     }
 
@@ -128,20 +131,15 @@ public class EnemyController : MonoBehaviour
         animator.SetTrigger("isAttacking");
         rb.linearVelocity = Vector2.zero;
 
-        // ⏱️ Chờ tới khung animation vung tay
         yield return new WaitForSeconds(damageFrameTime);
-
-        // ⚔️ Gây damage cho player tại đúng thời điểm
         ApplyDamageToPlayer();
 
-        // 🎧 Phát âm thanh tấn công
         if (attackSound != null && audioSource != null)
         {
             audioSource.PlayOneShot(attackSound);
             Debug.Log(gameObject.name + " played attack sound (Attack coroutine): " + attackSound.name);
         }
 
-        // Chờ cho tới hết animation
         yield return new WaitForSeconds(attackAnimationDuration - damageFrameTime);
 
         isAttacking = false;
@@ -156,7 +154,7 @@ public class EnemyController : MonoBehaviour
         if (distance > attackRange) return;
 
         bool isPlayerInFront = (player.position.x - transform.position.x > 0 && isFacingRight)
-                            || (player.position.x - transform.position.x < 0 && !isFacingRight);
+                             || (player.position.x - transform.position.x < 0 && !isFacingRight);
 
         if (isPlayerInFront)
         {
@@ -165,7 +163,6 @@ public class EnemyController : MonoBehaviour
             {
                 playerController.TakeDamage(attackDamage);
                 hasAppliedDamageThisAttack = true;
-                Debug.Log($"{gameObject.name} gây {attackDamage} damage lên Player!");
             }
         }
     }
@@ -207,6 +204,30 @@ public class EnemyController : MonoBehaviour
             if (audioSource.isPlaying) audioSource.Stop();
             if (deathSound != null) audioSource.PlayOneShot(deathSound);
         }
+
+        // 🔥 --- BẮT ĐẦU LOGIC RỚT VÀNG ---
+        // 1. Tìm đối tượng Player (Giống hệt ChestController)
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            PlayerController playerController = playerObject.GetComponent<PlayerController>();
+
+            if (playerController != null)
+            {
+                // 2. Gọi hàm AddGold() của Player với số vàng đã định trong Inspector
+                playerController.AddGold(goldDropAmount);
+                Debug.Log(gameObject.name + " rớt ra " + goldDropAmount + " vàng.");
+            }
+            else
+            {
+                Debug.LogError("Lỗi: Player object thiếu script PlayerController!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Lỗi: Không tìm thấy Player trong Scene (Kiểm tra Tag 'Player')!");
+        }
+        // 🔥 --- KẾT THÚC LOGIC RỚT VÀNG ---
 
         if (rb != null)
         {

@@ -206,8 +206,7 @@ MonoBehaviour:
   attackCooldown: 1.5
   detectRange: 6
   attackDamage: 10
-  playerPunchDamage: 2
-  requiredPunchesToKill: 3
+  maxHealth: 30
   attackAnimationDuration: 1
   damageFrameTime: 0.3
   playerLayer:

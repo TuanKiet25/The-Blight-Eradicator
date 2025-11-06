@@ -166,8 +166,8 @@ MonoBehaviour:
   attackCooldown: 3
   detectRange: 3.93
   attackDamage: 30
-  playerPunchDamage: 2
-  requiredPunchesToKill: 5
+  maxHealth: 200
+  goldDropAmount: 10
   shootSound: {fileID: 8300000, guid: ecc25280532427f4d9820d483c9309dd, type: 3}
   hurtSound: {fileID: 8300000, guid: 0c945c80a7b4be64cbed85b95998f40c, type: 3}
   deathSound: {fileID: 8300000, guid: d4de509be197b134e854f56da3b3d7ab, type: 3}
